@@ -1,0 +1,20 @@
+/**
+ * Professional Skills
+ */
+
+[data-percentage] {
+  background-color: rgba($primary-green, 0.2);
+}
+
+// Creates width for every percentage value
+@for $i from 1 through 100 {
+  [data-percentage="#{$i}"] {
+    &:before {
+      content: '';
+      width: #{$i}%;
+      height: 5px;
+      display: block;
+      background-color: $primary-green;
+    }
+  }
+}
