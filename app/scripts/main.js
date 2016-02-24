@@ -14,7 +14,8 @@
       experienceList: '.experience-list',
     },
     titles: {
-      skills: 'Professional skills'
+      skills: 'Professional Skills',
+      experience: 'Work Experience',
     },
     info: {
       name: 'Matt Coleman',
@@ -44,6 +45,9 @@
       ctaSelector: '.cta',
       ctaBefore: function($button){ return $button; },
     },
+    elements: {
+      heading: '.heading'
+    }
   };
 
   app.init = function init() {
