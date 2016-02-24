@@ -1,0 +1,24 @@
+/**
+ * Speech Bubbles
+ */
+
+.speech-bubble {
+  position: relative;
+  padding: 7px 12px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #FFF;
+  background-color: $primary-green;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 8px;
+    top: 100%;
+    border: 5px solid;
+    border-color: $primary-green transparent transparent $primary-green;
+  }
+}

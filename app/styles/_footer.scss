@@ -1,0 +1,16 @@
+/**
+ * Footer
+ */
+
+.footer {
+
+  &.footer-hero {
+    background-color: $primary-green;
+    text-align: center;
+
+    a {
+      color: #FFF;
+      padding: 10px;
+    }
+  }
+}
