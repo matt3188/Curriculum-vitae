@@ -35,6 +35,11 @@
       'Photoshop': 95,
       'Drupal': 40,
     },
+    config: {
+      trackCtas: true,
+      ctaSelector: '.cta',
+      ctaBefore: function($button){ return $button; },
+    },
   };
 
   app.init = function init() {
@@ -42,6 +47,7 @@
     app.PopulateTitles();
     app.populateSkills();
     app.populateExperience();
+    // app.trackCtas();
 
   };
 
@@ -103,7 +109,24 @@
 
   };
 
+  app.trackCtas = function() {
+    var $this = this;
+
+    // Set up click listeners for links
+    $(app.config.ctaSelector).preBind('click', function(e) {
+      var $button = $(this),
+      id = $button.attr('id'),
+      key = 'single',
+      label = $button.attr('data-event-label'),
+      href = app.ctas[id];
+      if (href !== false) {
+        // Update link href
+        $button.attr('href', href);
+      }
+      app.config.ctaBefore($button);
+    });
+  };
 
   return app.init();
 
- })();
+})();
