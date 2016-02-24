@@ -7,6 +7,8 @@
 
   var app = {
     sections: {
+      info: '.my-info',
+      infoList: '.info-list',
       skills: '.professional-skills',
       skillsList: '.skill-list',
       experienceList: '.experience-list',
@@ -16,17 +18,14 @@
     },
     info: {
       name: 'Matt Coleman',
-      currentJob: 'Front-end developer',
-      address: '320 Wricklemarsh, SE3 8ES',
       age: 27,
-      phone: '07905 404 858',
-      email: 'hello@matt-coleman.co.uk',
+      currentJob: 'Front-end developer'
     },
-    links: {
-      github: 'https://github.com/matt3188',
-      linkedin: 'https://uk.linkedin.com/in/matt-coleman-a178783a',
-      twitter: 'https://twitter.com/Matt__Coleman',
-      facebook: 'https://www.facebook.com/matt.coleman.562'
+    contactInfo: {
+      address: '320 Wricklemarsh, SE3 8ES',
+      email: 'hello@matt-coleman.co.uk',
+      phone: '07905 404 858'
+    },
     ctas: {
       github:'https://github.com/matt3188',
       linkedin:'https://uk.linkedin.com/in/matt-coleman-a178783a',
@@ -60,7 +59,18 @@
   app.PopulateTitles = function() {
     for (var prop in app.titles) {
       $(app.sections.skills).prepend('<h2 class="heading">' + app.titles[prop] + '</h2>');
+  app.populateHero = function() {
+    $(app.sections.info).append(
+      '<h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
+      '<h2 class="heading sub-heading">' + app.info.currentJob + '</h2>'
+    );
+
+    $(app.sections.infoList).prepend('<dt>Age</dt><dd>' + app.info.age + '</dd>');
+
+    for (var prop in app.contactInfo) {
+      $(app.sections.infoList).append('<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>');
     }
+
   };
 
   // Skills sections
