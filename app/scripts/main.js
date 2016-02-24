@@ -27,6 +27,11 @@
       linkedin: 'https://uk.linkedin.com/in/matt-coleman-a178783a',
       twitter: 'https://twitter.com/Matt__Coleman',
       facebook: 'https://www.facebook.com/matt.coleman.562'
+    ctas: {
+      github:'https://github.com/matt3188',
+      linkedin:'https://uk.linkedin.com/in/matt-coleman-a178783a',
+      twitter:'https://twitter.com/Matt__Coleman',
+      facebook:'https://www.facebook.com/matt.coleman.562',
     },
     skills: {
       'Wordpress': 80,
