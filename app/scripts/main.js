@@ -51,14 +51,23 @@
     app.PopulateTitles();
     app.populateSkills();
     app.populateExperience();
+    // app.PopulateTitles();
     // app.trackCtas();
 
   };
 
   // Titles
   app.PopulateTitles = function() {
+    function findHeadings() {
+      $('[data-heading="'+ prop +'"]').each(function(){
+          $(this).attr('data-attr', $(this).text(app.titles[prop]));
+        });
+    }
     for (var prop in app.titles) {
-      $(app.sections.skills).prepend('<h2 class="heading">' + app.titles[prop] + '</h2>');
+      findHeadings();
+    }
+  };
+
   app.populateHero = function() {
     $(app.sections.info).append(
       '<h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
