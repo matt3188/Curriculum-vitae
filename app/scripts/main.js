@@ -86,11 +86,12 @@
 
   };
 
+
   // Skills sections
   app.populateSkills = function() {
     // Populate professional skills
     for (var prop in app.skills) {
-      $(app.sections.skillsList).append('<dt>' + prop + '</dt>' + '<dd data-percentage="' + app.skills[prop] + '"></dd>');
+      $(app.sections.skillsList).append('<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>');
     }
   };
 
