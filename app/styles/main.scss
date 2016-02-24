@@ -1,11 +1,15 @@
 @import 'variables';
 
+@import 'fontello';
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 //
+@import 'list';
 @import 'speech-bubble';
 @import 'skills';
+@import 'hero';
+@import 'footer';
 
 .browserupgrade {
   margin: 0.2em 0;
