@@ -75,8 +75,8 @@
   };
 
   app.populateHero = function() {
-    $(app.sections.info).append(
-      '<h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
+    $(app.sections.info).prepend(
+      '<span class="speech-bubble">Hello</span><h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
       '<h2 class="heading sub-heading">' + app.info.currentJob + '</h2>'
     );
 

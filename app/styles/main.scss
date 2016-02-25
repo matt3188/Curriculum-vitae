@@ -7,11 +7,14 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 //
+@import 'col';
+@import 'btn';
 @import 'list';
 @import 'speech-bubble';
 @import 'skills';
 @import 'hero';
 @import 'footer';
+@import 'header';
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -24,5 +27,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  background-color: #efefef;
 }
 
+.container {
+  margin-top: 100px;
+}

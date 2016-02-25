@@ -3,6 +3,11 @@
  */
 
 .hero {
+
+  .hero-inner-content {
+    padding: 50px;
+  }
+
   &.main-hero {
     width: 100%;
     max-width: 960px;
