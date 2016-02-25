@@ -2,8 +2,8 @@
  * Matt's CV
  */
 
-(function () {
-  "use strict";
+(function ($) {
+  'use strict';
 
   var app = {
     sections: {
@@ -11,11 +11,11 @@
       infoList: '.info-list',
       skills: '.professional-skills',
       skillsList: '.skill-list',
-      experienceList: '.experience-list',
+      experienceList: '.experience-list'
     },
     titles: {
       skills: 'Professional Skills',
-      experience: 'Work Experience',
+      experience: 'Work Experience'
     },
     info: {
       name: 'Matt Coleman',
@@ -28,22 +28,22 @@
       phone: '07905 404 858'
     },
     ctas: {
-      github:'https://github.com/matt3188',
-      linkedin:'https://uk.linkedin.com/in/matt-coleman-a178783a',
-      twitter:'https://twitter.com/Matt__Coleman',
-      facebook:'https://www.facebook.com/matt.coleman.562',
+      github: 'https://github.com/matt3188',
+      linkedin: 'https://uk.linkedin.com/in/matt-coleman-a178783a',
+      twitter: 'https://twitter.com/Matt__Coleman',
+      facebook: 'https://www.facebook.com/matt.coleman.562'
     },
     skills: {
       'Wordpress': 80,
       'Javascript': 60,
       'HTML & CSS': 60,
       'Photoshop': 95,
-      'Drupal': 40,
+      'Drupal': 40
     },
     config: {
       trackCtas: true,
       ctaSelector: '.cta',
-      ctaBefore: function($button){ return $button; },
+      ctaBefore: function($button){ return $button; }
     },
     elements: {
       heading: '.heading'
@@ -52,23 +52,23 @@
 
   app.init = function init() {
 
-    app.PopulateTitles();
-    app.populateSkills();
-    app.populateExperience();
-    // app.PopulateTitles();
+    // app.populateTitles();
+    // app.populateHero();
+    // app.populateSkills();
+    // app.populateExperience();
     // app.trackCtas();
 
   };
 
   // Titles
-  app.PopulateTitles = function() {
-    function findHeadings() {
-      $('[data-heading="'+ prop +'"]').each(function(){
-          $(this).attr('data-attr', $(this).text(app.titles[prop]));
-        });
-    }
+  app.populateTitles = function() {
     for (var prop in app.titles) {
       findHeadings();
+    }
+    function findHeadings() {
+      $('[data-heading="' + prop + '"]').each(function(){
+          $(this).attr('data-attr', $(this).text(app.titles[prop]));
+        });
     }
   };
 
@@ -106,12 +106,14 @@
          klass.prototype[property] = methods[property];
       }
 
-      if (!klass.prototype.initialize) klass.prototype.initialize = function(){};
+      if (!klass.prototype.initialize) {
+        klass.prototype.initialize = function(){};
+      }
 
       return klass;
     };
 
-    var Job = new Class ({
+    var Job = new Class({
       initialize: function(company, startDate, finDate, role, content) {
         this.company = company;
         this.startDate = startDate;
@@ -120,16 +122,16 @@
         this.content = content;
       },
       toString: function() {
-        return  '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.finDate + '</span></time>' +
-                '<h3 class="heading">' + this.company + '</h3>'+
-                '<p class="role">' + this.role + '</p>';
+        return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.finDate + '</span></time>' +
+               '<h3 class="heading">' + this.company + '</h3>' +
+               '<p class="role">' + this.role + '</p>';
       }
     });
 
     var jobs = {
       popcorn: new Job('Popcorn', 'February 2012', 'August 2014', 'Customer service manager/ Web Developer', 'Lorem ipsum'),
       adnostic: new Job('Adnostic', 'August 2014', 'August 2015', 'Digital Designer', 'Lorem ipsum'),
-      dennisDigital: new Job('Dennis Digital', 'August 2015', 'Present', 'Front end developer', 'Lorem ipsum'),
+      dennisDigital: new Job('Dennis Digital', 'August 2015', 'Present', 'Front end developer', 'Lorem ipsum')
     };
 
     for (var prop in jobs) {
@@ -139,14 +141,14 @@
   };
 
   app.trackCtas = function() {
-    var $this = this;
+    // var $this = this;
 
     // Set up click listeners for links
-    $(app.config.ctaSelector).preBind('click', function(e) {
+    $(app.config.ctaSelector).preBind('click', function() {
       var $button = $(this),
       id = $button.attr('id'),
-      key = 'single',
-      label = $button.attr('data-event-label'),
+      // key = 'single',
+      // label = $button.attr('data-event-label'),
       href = app.ctas[id];
       if (href !== false) {
         // Update link href
