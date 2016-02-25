@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rf out || exit 0;
+mkdir out;
+
 set -o errexit -o nounset
 
 if [ "$TRAVIS_BRANCH" != "master" ]
@@ -10,7 +13,7 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
-cd _site
+cd out
 
 git init
 git config user.name "Travis CI"
