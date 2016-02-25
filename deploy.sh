@@ -2,6 +2,9 @@
 
 set -e # exit with nonzero exit code if anything fails
 
+# run our compile script, discussed above
+npm run-script build
+
 # go to the out directory and create a *new* Git repo
 cd build
 git init
