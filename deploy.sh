@@ -1,4 +1,6 @@
 #!/bin/bash
+clear
+set -x
 set -e # exit with nonzero exit code if anything fails
 
 # clear and re-create the out directory
@@ -24,6 +26,8 @@ git config user.email "hello@matt-coleman.co.uk"
 # files present with the commit message "Deploy to GitHub Pages".
 git add .
 git commit -m "Deploy to GitHub Pages"
+
+set +x
 
 # Force push from the current repo's master branch to the remote
 # repo's gh-pages branch. (All previous history on the gh-pages branch
