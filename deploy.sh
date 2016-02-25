@@ -17,6 +17,10 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
+for files in '*.tar.gz'; do
+        tar xfz $files
+done
+
 cd out
 
 git init
