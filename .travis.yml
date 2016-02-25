@@ -9,7 +9,6 @@ install:
 - npm install -g gulp
 - bower install
 - npm install
-- npm run build
 script: gulp
 
 after_success:
