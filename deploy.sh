@@ -2,20 +2,9 @@
 
 set -e # exit with nonzero exit code if anything fails
 
-# clear and re-create the out directory
-rm -rf out || exit 0;
-mkdir out;
-
-GH_REPO="@github.com:matt3188/Curriculum-vitae.git"
-
-FULL_REPO="https://$GH_TOKEN$GH_REPO"
-
 # go to the out directory and create a *new* Git repo
-cd out
+cd build
 git init
-
-# run our compile script, discussed above
-npm run-script build
 
 # inside this git repo we'll pretend to be a new user
 git config user.name "Travis CI"
@@ -30,4 +19,4 @@ git commit -m "Deploy to GitHub Pages"
 # repo's gh-pages branch. (All previous history on the gh-pages branch
 # will be lost, since we are overwriting it.) We redirect any output to
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
-git push --force --quiet $FULL_REPO master:gh-pages
+git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
