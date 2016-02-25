@@ -52,11 +52,11 @@
 
   app.init = function init() {
 
-    // app.populateTitles();
-    // app.populateHero();
-    // app.populateSkills();
-    // app.populateExperience();
-    // app.trackCtas();
+    app.populateTitles();
+    app.populateHero();
+    app.populateSkills();
+    app.populateExperience();
+    app.trackCtas();
 
   };
 
