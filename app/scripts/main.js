@@ -1,8 +1,10 @@
+/* global $: false */
+
 /**
  * Matt's CV
  */
 
-(function ($) {
+(function () {
   'use strict';
 
   var app = {
@@ -67,8 +69,8 @@
     }
     function findHeadings() {
       $('[data-heading="' + prop + '"]').each(function(){
-          $(this).attr('data-attr', $(this).text(app.titles[prop]));
-        });
+        $(this).attr('data-attr', $(this).text(app.titles[prop]));
+      });
     }
   };
 
@@ -89,7 +91,6 @@
 
   // Skills sections
   app.populateSkills = function() {
-    // Populate professional skills
     for (var prop in app.skills) {
       $(app.sections.skillsList).append('<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>');
     }
@@ -141,14 +142,10 @@
   };
 
   app.trackCtas = function() {
-    // var $this = this;
-
     // Set up click listeners for links
     $(app.config.ctaSelector).preBind('click', function() {
       var $button = $(this),
       id = $button.attr('id'),
-      // key = 'single',
-      // label = $button.attr('data-event-label'),
       href = app.ctas[id];
       if (href !== false) {
         // Update link href

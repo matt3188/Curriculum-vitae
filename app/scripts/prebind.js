@@ -1,3 +1,5 @@
+/* global jQuery: false */
+
 (function($) {
   'use strict';
 
@@ -7,7 +9,7 @@
 
       $this.bind(type, data, fn);
 
-      var currentBindings = $.data($this[0], 'events');
+      var currentBindings = $this.data($this[0], 'events');
       if ($.isArray(currentBindings[type])) {
         currentBindings[type].unshift(currentBindings[type].pop());
       }
@@ -16,4 +18,4 @@
     return this;
   };
 
-})();
+})(jQuery);
