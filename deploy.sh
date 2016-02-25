@@ -3,6 +3,10 @@
 rm -rf out || exit 0;
 mkdir out;
 
+GH_REPO="@github.com:matt3188/Curriculum-vitae.git"
+
+FULL_REPO="https://$GH_TOKEN$GH_REPO"
+
 set -o errexit -o nounset
 
 if [ "$TRAVIS_BRANCH" != "master" ]
@@ -19,12 +23,6 @@ git init
 git config user.name "Travis CI"
 git config user.email "hello@matt-coleman.co.uk"
 
-git remote add upstream "https://$GH_TOKEN@github.com/rust-lang/rust-by-example.git"
-git fetch upstream
-git reset upstream/gh-pages
-
-touch .
-
-git add -A .
-git commit -m "rebuild pages at ${rev}"
-git push -q upstream HEAD:gh-pages
+git add .
+git commit -m "Deploy to Github Pages at ${rev}"
+git push --force --quiet $FULL_REPO master:gh-pages
