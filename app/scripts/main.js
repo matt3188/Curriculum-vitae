@@ -26,6 +26,7 @@
       skills: 'Professional Skills',
       experience: 'Work Experience'
       portfolio: 'Portfolio',
+      contact: 'Please feel free to contact me'
     },
     info: {
       name: 'Matt Coleman',
