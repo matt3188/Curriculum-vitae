@@ -55,6 +55,7 @@
   app.init = function init() {
     app.populateTitles();
     app.populateHero();
+    app.populateSocialLinks();
     app.populateSkills();
     app.populateExperience();
     app.trackCtas();
@@ -94,6 +95,13 @@
   app.populateSkills = function() {
     for (var prop in app.skills) {
       $(app.sections.skillsList).append('<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>');
+    }
+  };
+
+  // Social Social links
+  app.populateSocialLinks = function() {
+    for (var prop in app.ctas) {
+      $(app.sections.socialList).append('<li><a id="' + prop + '" class="cta" href="" target="_blank"><i class="icon icon-' + prop + '"></i></a></li>');
     }
   };
 
