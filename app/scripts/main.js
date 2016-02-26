@@ -19,6 +19,7 @@
       skills: '.professional-skills',
       skillsList: '.skill-list',
       experienceList: '.experience-list'
+      socialList: '.social-list'
     },
     titles: {
       skills: 'Professional Skills',
