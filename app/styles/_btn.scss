@@ -3,8 +3,13 @@
  */
 
 .btn {
+
   &.btn-download {
-    margin: auto;
     display: inline-block;
+    border: 1px solid #CBCDCF;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 30px;
   }
 }
