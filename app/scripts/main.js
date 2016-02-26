@@ -85,7 +85,8 @@
     $(app.sections.info).prepend(
       '<span class="speech-bubble">Hello</span>' +
       '<h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
-      '<h2 class="heading sub-heading">' + app.info.currentJob + '</h2>'
+      '<h2 class="heading sub-heading">' + app.info.currentJob + '</h2>' +
+      '<hr />'
     );
     // Makes more sense to put this in the <dl> list so prepend the
     // populated list as it lives in a differnet part of the object
@@ -142,7 +143,8 @@
       toString: function() {
         return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.finDate + '</span></time>' +
                '<h3 class="heading">' + this.company + '</h3>' +
-               '<p class="role">' + this.role + '</p>';
+               '<p class="role">' + this.role + '</p>',
+               '<p class="content">' + this.content + '</p>';
       }
     });
 
