@@ -24,7 +24,7 @@
     },
     titles: {
       skills: 'Professional Skills',
-      experience: 'Work Experience'
+      experience: 'Work Experience',
       portfolio: 'Portfolio',
       contact: 'Please feel free to contact me'
     },
