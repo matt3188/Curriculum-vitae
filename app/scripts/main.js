@@ -8,6 +8,11 @@
   'use strict';
 
   var app = {
+    config: {
+      trackCtas: true,
+      ctaSelector: '.cta',
+      ctaBefore: function($button){ return $button; }
+    },
     sections: {
       info: '.my-info',
       infoList: '.info-list',
@@ -37,15 +42,10 @@
     },
     skills: {
       'Wordpress': 80,
-      'Javascript': 60,
-      'HTML & CSS': 60,
-      'Photoshop': 95,
-      'Drupal': 40
-    },
-    config: {
-      trackCtas: true,
-      ctaSelector: '.cta',
-      ctaBefore: function($button){ return $button; }
+      'Javascript': 65,
+      'HTML & CSS': 95,
+      'Photoshop': 90,
+      'Drupal': 45
     },
     elements: {
       heading: '.heading'
@@ -53,13 +53,11 @@
   };
 
   app.init = function init() {
-
     app.populateTitles();
     app.populateHero();
     app.populateSkills();
     app.populateExperience();
     app.trackCtas();
-
   };
 
   // Titles
@@ -67,6 +65,8 @@
     for (var prop in app.titles) {
       findHeadings();
     }
+    // Find all [data-heading] in HTML and insert the
+    // correct heading based on app object
     function findHeadings() {
       $('[data-heading="' + prop + '"]').each(function(){
         $(this).attr('data-attr', $(this).text(app.titles[prop]));
@@ -74,22 +74,23 @@
     }
   };
 
+  // Main hero
   app.populateHero = function() {
     $(app.sections.info).prepend(
-      '<span class="speech-bubble">Hello</span><h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
+      '<span class="speech-bubble">Hello</span>' +
+      '<h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
       '<h2 class="heading sub-heading">' + app.info.currentJob + '</h2>'
     );
-
+    // Makes more sense to put this in the <dl> list so prepend the
+    // populated list as it lives in a differnet part of the object
     $(app.sections.infoList).prepend('<dt>Age</dt><dd>' + app.info.age + '</dd>');
 
     for (var prop in app.contactInfo) {
       $(app.sections.infoList).append('<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>');
     }
-
   };
 
-
-  // Skills sections
+  // Skills section
   app.populateSkills = function() {
     for (var prop in app.skills) {
       $(app.sections.skillsList).append('<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>');
@@ -97,7 +98,6 @@
   };
 
   app.populateExperience = function() {
-
     var Class = function(methods) {
       var klass = function() {
           this.initialize.apply(this, arguments);
@@ -141,8 +141,8 @@
 
   };
 
+  // Set up click listeners for links
   app.trackCtas = function() {
-    // Set up click listeners for links
     $(app.config.ctaSelector).preBind('click', function() {
       var $button = $(this),
       id = $button.attr('id'),
