@@ -25,6 +25,7 @@
     titles: {
       skills: 'Professional Skills',
       experience: 'Work Experience'
+      portfolio: 'Portfolio',
     },
     info: {
       name: 'Matt Coleman',
