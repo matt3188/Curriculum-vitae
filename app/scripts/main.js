@@ -19,7 +19,7 @@
       intro: '.intro',
       skills: '.professional-skills',
       skillsList: '.skill-list',
-      experienceList: '.experience-list'
+      experienceList: '.experience-list',
       socialList: '.social-list'
     },
     titles: {
@@ -62,6 +62,7 @@
     app.populateIntro();
     app.populateSkills();
     app.populateExperience();
+    app.slideToSection();
     app.trackCtas();
   };
 
@@ -155,6 +156,21 @@
       $(app.sections.experienceList).append('<li>' + jobs[prop].toString() + '</li>');
     }
 
+  };
+
+  app.slideToSection = function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 800);
+          return false;
+        }
+      }
+    });
   };
 
   // Set up click listeners for links
