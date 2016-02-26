@@ -16,6 +16,7 @@
     sections: {
       info: '.my-info',
       infoList: '.info-list',
+      intro: '.intro',
       skills: '.professional-skills',
       skillsList: '.skill-list',
       experienceList: '.experience-list'
@@ -41,6 +42,7 @@
       twitter: 'https://twitter.com/Matt__Coleman',
       facebook: 'https://www.facebook.com/matt.coleman.562'
     },
+    intro: 'Short intro to introduce my self',
     skills: {
       'Wordpress': 80,
       'Javascript': 65,
@@ -57,6 +59,7 @@
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
+    app.populateIntro();
     app.populateSkills();
     app.populateExperience();
     app.trackCtas();
@@ -90,6 +93,10 @@
     for (var prop in app.contactInfo) {
       $(app.sections.infoList).append('<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>');
     }
+  };
+
+  app.populateIntro = function() {
+    $(app.sections.intro).append('<p>' + app.intro + '</p>');
   };
 
   // Skills section
