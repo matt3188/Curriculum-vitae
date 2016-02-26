@@ -144,7 +144,7 @@
       toString: function() {
         return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.finDate + '</span></time>' +
                '<h3 class="heading">' + this.company + '</h3>' +
-               '<p class="role">' + this.role + '</p>',
+               '<p class="role">' + this.role + '</p>' +
                '<p class="content">' + this.content + '</p>';
       }
     });
@@ -163,9 +163,9 @@
 
   app.slideToSection = function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
         var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html, body').animate({
             scrollTop: target.offset().top
@@ -189,6 +189,20 @@
       app.config.ctaBefore($button);
     });
   };
+
+  $(window).scroll( function(){
+    /* Check the location of each desired element */
+    $('.hideme').each( function(){
+      var bottomofObject = $(this).offset().top + $(this).outerHeight();
+      var bottomOfWindow = $(window).scrollTop() + $(window).height();
+      /* If the object is completely visible in the window, fade it it */
+      if( bottomOfWindow > bottomofObject ){
+        $(this).animate({
+          'opacity': '1'
+        }, 500);
+      }
+    });
+  });
 
   return app.init();
 
