@@ -3,6 +3,12 @@
   "engines": {
     "node": ">=0.12.0"
   },
+  "version" : "0.0.1",
+  "description" : "A repo to house all my endeavours",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/matt3188/Curriculum-vitae.git"
+  },
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-preset-es2015": "^6.3.13",
