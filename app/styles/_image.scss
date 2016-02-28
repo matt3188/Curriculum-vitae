@@ -3,12 +3,15 @@
 */
 .image {
   position: relative;
-  
-  @media only screen and (max-width: 480px) {
-    clip-path: circle(45% at 50%);
-    
+
+  &.profile-image {
+
     img {
-      width: 200%;
+      width: 100%;
+    }
+    @media only screen and (max-width: 480px) {
+      clip-path: circle(45% at 50%);
+
     }
   }
 }
