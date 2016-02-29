@@ -92,6 +92,12 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
+gulp.task('bump', () => {
+  return gulp.src('./*.json')
+    .pipe($.bump({ type: 'minor' }))
+    .pipe(gulp.dest('./'));
+});
+
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {

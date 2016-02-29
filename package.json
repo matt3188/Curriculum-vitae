@@ -3,11 +3,11 @@
   "engines": {
     "node": ">=0.12.0"
   },
-  "version" : "0.0.1",
-  "description" : "A repo to house all my endeavours",
+  "version": "0.1.0",
+  "description": "A repo to house all my endeavours",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/matt3188/Curriculum-vitae.git"
+    "type": "git",
+    "url": "https://github.com/matt3188/Curriculum-vitae.git"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
@@ -17,6 +17,7 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-babel": "^6.1.1",
+    "gulp-bump": "^1.0.0",
     "gulp-cache": "^0.2.8",
     "gulp-cssnano": "^2.0.0",
     "gulp-eslint": "^0.13.2",
