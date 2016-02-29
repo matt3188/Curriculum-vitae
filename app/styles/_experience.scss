@@ -3,9 +3,10 @@
  */
 
 .experience-list {
+
   &:after {
     content:'';
-    width: 5px; 
+    width: 5px;
     height: 100%;
     background-color: rgba($primary-green, 0.2);
     display: block;
@@ -22,26 +23,30 @@
     position: relative;
     padding: 10px;
     background-color: #FFF;
+    border-top: 4px solid $primary-green;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
 
     &:before {
       content: '';
-      border: solid transparent;
-      height: 0;
-      width: 0;
       position: absolute;
-      pointer-events: none;
-      border-color: rgba(255, 255, 255, 0);
-      border-width: 10px;
-      margin-top: -10px;
+      width: 0;
+      height: 0;
+      box-sizing: border-box;
+
+      border: 0.7em solid black;
+      border-color: transparent transparent #fff #fff;
+
+      transform-origin: 0 0;
+      box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 0.1);
     }
   }
 
   &.float-left {
     .experience-item-inner {
       &:before {
-        top: 20%;
+        top: 25%;
         left: 100%;
-        border-left-color: #FFFFFF;
+        transform: rotate(-135deg);
       }
     }
   }
@@ -51,8 +56,8 @@
     .experience-item-inner {
       &:before {
         top: 40%;
-        right: 100%;
-        border-right-color: #FFFFFF;
+        left: 0;
+        transform: rotate(45deg);
       }
     }
   }
