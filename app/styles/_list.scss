@@ -51,4 +51,14 @@
       margin-bottom: 10px;
     }
   }
+
+  &.experience-list {
+
+    li {
+      
+      &:nth-child(2n) {
+        padding-right: 0;
+      }
+    }
+  }
 }
