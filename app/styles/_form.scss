@@ -1,0 +1,13 @@
+/**
+ * Form
+ */
+
+.form {
+
+  &.stacked-form {
+    label,
+    input {
+      width: 100%;
+    }
+  }
+}

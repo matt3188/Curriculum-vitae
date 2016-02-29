@@ -26,6 +26,7 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <nav class="navigation">
       <ul class="nav nav-pills pull-right">
         <li><a href="#">Home</a></li>
@@ -79,7 +80,34 @@
         </article>
 
         <article id="contact" class="contact hideme">
+          <h2 class="heading" data-heading="contact"></h2>
+          <form class="form stacked-form">
+            <div class="field">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Name">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="field">
+              <label>Subject</label>
+              <input type="text" name="subject" placeholder="I have a really awesome job for you...">
+            </div>
+            <div class="field">
+              <label>Message</label>
+              <input type="text" name="message" placeholder="Message">
+            </div>
+            <div class="form-controls">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
         </article>
+
+        <article id="interests" class="interests hideme">
+          <h2 class="heading" data-heading="interests"></h2>
+        </article>
+
       </section>
 
       <footer class="footer">
