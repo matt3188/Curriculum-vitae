@@ -17,15 +17,29 @@
   }
 }
 .experience-item {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   .experience-item-inner {
     position: relative;
     padding: 10px;
     background-color: #FFF;
     border-top: 4px solid $primary-green;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 
+    // Spot indicator
+    &:after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: block;
+      background-color: $primary-green;
+      position: absolute;
+      border: 2px solid $gallery-grey;
+      z-index: 1;
+    }
+
+    // Arrow
     &:before {
       content: '';
       position: absolute;
@@ -34,7 +48,7 @@
       box-sizing: border-box;
 
       border: 0.7em solid black;
-      border-color: transparent transparent #fff #fff;
+      border-color: transparent transparent #FFF #FFF;
 
       transform-origin: 0 0;
       box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 0.1);
@@ -42,7 +56,13 @@
   }
 
   &.float-left {
+    padding-right: 30px;
+
     .experience-item-inner {
+      &:after {
+        top: 13%;
+        right: -38px;
+      }
       &:before {
         top: 25%;
         left: 100%;
@@ -52,8 +72,13 @@
   }
 
   &.float-right {
-    padding-left: 20px;
+    padding-left: 30px;
+
     .experience-item-inner {
+      &:after {
+        top: 43%;
+        left: -38px;
+      }
       &:before {
         top: 40%;
         left: 0;
