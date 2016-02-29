@@ -1,0 +1,59 @@
+/**
+ * Timeline
+ */
+
+.experience-list {
+  &:after {
+    content:'';
+    width: 5px; 
+    height: 100%;
+    background-color: rgba($primary-green, 0.2);
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+.experience-item {
+  margin-bottom: 10px;
+
+  .experience-item-inner {
+    position: relative;
+    padding: 10px;
+    background-color: #FFF;
+
+    &:before {
+      content: '';
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(255, 255, 255, 0);
+      border-width: 10px;
+      margin-top: -10px;
+    }
+  }
+
+  &.float-left {
+    .experience-item-inner {
+      &:before {
+        top: 20%;
+        left: 100%;
+        border-left-color: #FFFFFF;
+      }
+    }
+  }
+
+  &.float-right {
+    padding-left: 20px;
+    .experience-item-inner {
+      &:before {
+        top: 40%;
+        right: 100%;
+        border-right-color: #FFFFFF;
+      }
+    }
+  }
+}

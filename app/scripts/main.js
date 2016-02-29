@@ -157,9 +157,11 @@
     };
 
     for (var prop in jobs) {
-      $(app.sections.experienceList).append('<li>' + jobs[prop].toString() + '</li>');
+      $(app.sections.experienceList).append('<li class="col-1-2 experience-item"><div class="experience-item-inner">' + jobs[prop].toString() + '</div></li>');
     }
 
+    $('.experience-list li:even').addClass('float-left');
+    $('.experience-list li:odd').addClass('float-right');
   };
 
   app.slideToSection = function() {
