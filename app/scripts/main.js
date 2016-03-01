@@ -26,7 +26,7 @@
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
-      contact: 'Please feel free to contact me'
+      contact: 'Contact me'
     },
     info: {
       name: 'Matt Coleman',
@@ -53,7 +53,8 @@
       'Drupal': 45
     },
     elements: {
-      heading: '.heading'
+      heading: '.heading',
+      contact: '.contact-form'
     }
   };
 
@@ -162,6 +163,14 @@
 
     $('.experience-list li:even').addClass('float-left');
     $('.experience-list li:odd').addClass('float-right');
+  };
+
+  app.contactFormValidate = function() {
+    $(app.element.contactForm).parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+    $('.bs-callout-info').toggleClass('hidden', !ok);
+    $('.bs-callout-warning').toggleClass('hidden', ok);
+  });
   };
 
   app.slideToSection = function() {

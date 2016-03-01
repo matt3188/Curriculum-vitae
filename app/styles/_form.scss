@@ -6,8 +6,28 @@
 
   &.stacked-form {
     label,
+    textarea,
     input {
-      width: 100%;
+      &:not([type='submit']) {
+        width: 100%;
+      }
     }
+
+    textarea {
+      resize: none;
+      height: 10em;
+    }
+    textarea,
+    input {
+      &:not([type='submit']) {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+    }
+  }
+
+  .field {
+    margin-bottom: 10px;
   }
 }

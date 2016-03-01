@@ -4,6 +4,12 @@
 
 .btn {
 
+  &.btn-standard {
+    color: #FFF;
+    background-color: $primary-green;
+    text-transform: uppercase;
+    padding: 5px 25px;
+  }
   &.btn-download {
     display: inline-block;
     border: 1px solid #CBCDCF;
