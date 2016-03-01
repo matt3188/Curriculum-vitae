@@ -18,6 +18,24 @@
         border: 1px solid #ccc;
         padding: 10px;
       }
+
+      &:focus {
+
+        + label {
+          top: -20px;
+        }
+
+      }
+    }
+    label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      pointer-events: none;
+      font-weight: normal;
+      color: #bbb;
+      transition: 0.3s;
+      z-index: 1;
     }
     textarea {
       resize: none;
@@ -26,6 +44,7 @@
   }
 
   .field {
-    margin-bottom: 10px;
+    position: relative;
+    margin-bottom: 20px;
   }
 }
