@@ -24,7 +24,10 @@
         + label {
           top: -20px;
         }
+      }
 
+      &.parsley-error {
+        border-color: red;
       }
     }
     label {
@@ -35,7 +38,6 @@
       font-weight: normal;
       color: #bbb;
       transition: 0.3s;
-      z-index: 1;
     }
     textarea {
       resize: none;
