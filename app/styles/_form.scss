@@ -12,18 +12,16 @@
         width: 100%;
       }
     }
-
-    textarea {
-      resize: none;
-      height: 10em;
-    }
     textarea,
     input {
       &:not([type='submit']) {
         border: 1px solid #ccc;
         padding: 10px;
       }
-
+    }
+    textarea {
+      resize: none;
+      height: 10em;
     }
   }
 
