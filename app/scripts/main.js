@@ -53,7 +53,9 @@
       'Drupal': 45
     },
     elements: {
-      heading: '.heading'
+      heading: '.heading',
+      menuToggle: '#menu-toggle',
+      mainMenu: '.nav-main'
     }
   };
 
@@ -176,6 +178,13 @@
           return false;
         }
       }
+    });
+  };
+
+  app.menuToogle = function() {
+    $(app.elements.menuToggle).on('click', function() {
+      $(this).toggleClass('open');
+      $(app.elements.mainMenu).toggleClass('on-screen');
     });
   };
 
