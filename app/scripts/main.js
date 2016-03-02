@@ -54,7 +54,8 @@
     },
     elements: {
       heading: '.heading',
-      contactForm: '.contact-form'
+      contactForm: '.contact-form',
+      contactFormSubmit: '.contact-form'
     }
   };
 
@@ -65,6 +66,7 @@
     app.populateIntro();
     app.populateSkills();
     app.populateExperience();
+    app.contactFormValidate();
     app.slideToSection();
     app.trackCtas();
   };
@@ -171,9 +173,7 @@
       $('.bs-callout-info').toggleClass('hidden', !ok);
       $('.bs-callout-warning').toggleClass('hidden', ok);
     })
-    .on('form:submit', function(e) {
-
-      e.preventDefault();
+    .on('form:submit', function() {
 
       var actionurl = e.currentTarget.action;
 
@@ -183,13 +183,11 @@
         dataType: 'json',
         data: $(app.elements.contactForm).serialize(),
         success: function(data) {
-          console.log(data);
+          alert('This is a working process');
         }
       });
 
     });
-
-
   };
 
   app.slideToSection = function() {
