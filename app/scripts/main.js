@@ -55,6 +55,7 @@
     elements: {
       heading: '.heading',
       contact: '.contact-form'
+      contactForm: '.contact-form'
     }
   };
 
@@ -171,6 +172,30 @@
     $('.bs-callout-info').toggleClass('hidden', !ok);
     $('.bs-callout-warning').toggleClass('hidden', ok);
   });
+    $(app.elements.contactForm).parsley().on('field:validated', function() {
+      var ok = $('.parsley-error').length === 0;
+      $('.bs-callout-info').toggleClass('hidden', !ok);
+      $('.bs-callout-warning').toggleClass('hidden', ok);
+    })
+    .on('form:submit', function(e) {
+
+      e.preventDefault();
+
+      var actionurl = e.currentTarget.action;
+
+      $.ajax({
+        url: actionurl,
+        type: 'post',
+        dataType: 'json',
+        data: $(app.elements.contactForm).serialize(),
+        success: function(data) {
+          console.log(data);
+        }
+      });
+
+    });
+
+
   };
 
   app.slideToSection = function() {
