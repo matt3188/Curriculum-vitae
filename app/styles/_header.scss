@@ -4,8 +4,11 @@
 
 .header {
   background-color: #4c545f;
-  padding-top: 100px;
+  padding-top: 53px;
 
+  @media only screen and (min-width: $mobile-width) {
+    padding-top: 100px;
+  }
   @media only screen and (min-width: 960px) {
     max-height: 520px;
     margin-bottom: 110px;
