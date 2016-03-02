@@ -54,7 +54,6 @@
     },
     elements: {
       heading: '.heading',
-      contact: '.contact-form'
       contactForm: '.contact-form'
     }
   };
@@ -167,11 +166,6 @@
   };
 
   app.contactFormValidate = function() {
-    $(app.element.contactForm).parsley().on('field:validated', function() {
-    var ok = $('.parsley-error').length === 0;
-    $('.bs-callout-info').toggleClass('hidden', !ok);
-    $('.bs-callout-warning').toggleClass('hidden', ok);
-  });
     $(app.elements.contactForm).parsley().on('field:validated', function() {
       var ok = $('.parsley-error').length === 0;
       $('.bs-callout-info').toggleClass('hidden', !ok);
