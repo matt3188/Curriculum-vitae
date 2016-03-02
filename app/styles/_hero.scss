@@ -4,14 +4,17 @@
 
 .hero {
 
-  .hero-inner-content {
-    padding: 50px;
-  }
-
   &.main-hero {
+  	position: relative;
     width: 100%;
     max-width: 960px;
     margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 2;
+  }
+  .hero-inner-content {
+    padding: 50px;
     background-color: #FFF;
   }
 }
