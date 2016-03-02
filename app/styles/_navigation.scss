@@ -1,0 +1,18 @@
+/**
+ * Navigation
+ */
+
+.nav {
+
+  &.nav-main  {
+    padding: 10px;
+    a {
+      color: #FFF;
+
+      &:hover,
+      &:focus {
+        background-color: $primary-green;
+      }
+    }
+  }
+}
