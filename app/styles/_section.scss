@@ -5,8 +5,15 @@
 .section {
   padding: 20px 0;
   clear: both;
+  margin: 40px 0;
+  padding: 20px;
 
   &#experience {
     position: relative;
   }
+}
+
+.has-shadow {
+  background-color: #FFF;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
