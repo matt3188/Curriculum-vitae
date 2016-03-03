@@ -160,7 +160,7 @@
     };
 
     for (var prop in jobs) {
-      $(app.sections.experienceList).append('<li class="col-1-2 experience-item"><div class="experience-item-inner">' + jobs[prop].toString() + '</div></li>');
+      $(app.sections.experienceList).append('<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>');
     }
 
     $('.experience-list li:even').addClass('float-left');
@@ -210,9 +210,7 @@
       var bottomOfWindow = $(window).scrollTop() + $(window).height();
       /* If the object is completely visible in the window, fade it it */
       if( bottomOfWindow > bottomofObject ){
-        $(this).animate({
-          'opacity': '1'
-        }, 500);
+        $(this).addClass('showme');
       }
     });
   });
