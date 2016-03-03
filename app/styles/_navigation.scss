@@ -3,7 +3,7 @@
  */
 
 .navigation {
-  @media all and (max-width: 320px) {
+  @media all and (max-width: $mobile-width) {
     position: absolute;
     height: 100%;
     top: 0;
@@ -23,7 +23,7 @@
     z-index: 98;
     background-color: rgba($primary-green, 0.9);
 
-    @media all and (min-width: 320px) {
+    @media all and (min-width: $mobile-width) {
       padding: 10px 10px 10px 10px;
       height: inherit;
       transform: translate3d(0,0,0);
@@ -38,7 +38,7 @@
       display: block;
       width: 100%;
       text-align: center;
-      @media all and (min-width: 320px) {
+      @media all and (min-width: $mobile-width) {
         width: inherit;
         display: inline-block;
       }
@@ -49,7 +49,7 @@
       width: 100%;
       display: block;
       font-size: 2em;
-      @media all and (min-width: 320px) {
+      @media all and (min-width: $mobile-width) {
         font-size: 1em;
       }
 
@@ -101,7 +101,7 @@
          -o-transition: .25s ease-in-out;
             transition: .25s ease-in-out;
   }
-  @media all and (min-width: 320px) {
+  @media all and (min-width: $mobile-width) {
     display: none;
   }
 }

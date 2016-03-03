@@ -3,11 +3,18 @@
  */
 
 .header {
-  background-color: #4c545f;
-  padding-top: 100px;
+  padding-top: 53px;
 
   @media only screen and (min-width: 960px) {
-    max-height: 520px;
-    margin-bottom: 110px;
+    margin-bottom: 50px;
+  }
+
+  .bg-header {
+    height: 450px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4c545f;
   }
 }
