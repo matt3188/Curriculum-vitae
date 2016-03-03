@@ -13,10 +13,19 @@
       ctaSelector: '.cta',
       ctaBefore: function($button){ return $button; }
     },
+    mainSections: {
+      cta: 'cta-banner',
+      skills: 'professional-skills',
+      portfolio: 'portfolio',
+      experience: 'experience',
+      interests: 'interests',
+      contact: 'contact'
+    },
     sections: {
       info: '.my-info',
       infoList: '.info-list',
       intro: '.intro',
+      cta: '.cta-banner',
       skills: '.professional-skills',
       skillsList: '.skill-list',
       experienceList: '.experience-list',
@@ -26,6 +35,7 @@
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
+      interests: 'Interests',
       contact: 'Please feel free to contact me'
     },
     info: {
@@ -60,6 +70,7 @@
   };
 
   app.init = function init() {
+    app.createSections();
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
@@ -69,6 +80,11 @@
     app.slideToSection();
     app.menuToogle();
     app.trackCtas();
+  // Creates section skeleton in which to populate
+  app.createSections = function() {
+    for (var prop in app.mainSections) {
+      $('.container').append('<article id="' + prop + '" class="section ' + app.mainSections[prop] + ' hideme"><h2 class="heading" data-heading="' + prop + '"></h2></div>');
+    }
   };
 
   // Titles
@@ -80,7 +96,7 @@
     // correct heading based on app object
     function findHeadings() {
       $('[data-heading="' + prop + '"]').each(function(){
-        $(this).attr('data-attr', $(this).text(app.titles[prop]));
+        $(this).text(app.titles[prop]);
       });
     }
   };
