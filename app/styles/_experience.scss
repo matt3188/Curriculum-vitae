@@ -4,13 +4,14 @@
 
 .experience-list {
 
+  // Timeline
   &:after {
     content:'';
     width: 5px;
     background-color: rgba($primary-green, 0.2);
     display: block;
     position: absolute;
-    top: 25%;
+    top: 23%;
     left: 0;
     bottom: 25%;
     right: 0;
