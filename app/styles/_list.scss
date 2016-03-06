@@ -40,7 +40,22 @@
     }
   }
 
+  &.social-list {
+    .main-hero & {
+      a {
+        border-radius: 50%;
+        margin: 10px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: lighten($primary-green, 5%);
+        }
+      }
+    }
+  }
+
   &.stacked-list {
+
     dt, dd {
       display: block;
     }
@@ -55,7 +70,7 @@
   &.experience-list {
 
     li {
-      
+
       &:nth-child(2n) {
         padding-right: 0;
       }
