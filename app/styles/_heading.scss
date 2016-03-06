@@ -1,0 +1,14 @@
+/**
+ * Heading
+ */
+
+.heading {
+  margin: 0 0 20px 0;
+
+  &.main-heading {
+
+    .main-hero & {
+      margin: 10px 0 0 0;
+    }
+  }
+}
