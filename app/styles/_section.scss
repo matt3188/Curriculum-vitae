@@ -4,10 +4,13 @@
 
 .section {
   padding: 20px;
-  margin: 40px 0;
+  margin: 0 0 10px 0;
   float: left;
   width: 100%;
   clear: both;
+  @media only screen and (min-width: $mobile-width) {
+    margin: 0 0 40px 0;
+  }
 
   &#experience {
     position: relative;
