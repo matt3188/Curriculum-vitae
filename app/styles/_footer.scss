@@ -15,4 +15,13 @@
       font-size: 1.5em;
     }
   }
+
+  &.footer-page {
+    text-align: center;
+
+    a {
+      padding: 15px;
+      color: #ccc;
+    }
+  }
 }
