@@ -26,7 +26,8 @@
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
-      contact: 'Please feel free to contact me'
+      contact: 'Please feel free to contact me',
+      interests: 'Interests'
     },
     info: {
       name: 'Matt Coleman',
@@ -55,7 +56,8 @@
     elements: {
       heading: '.heading',
       menuToggle: '#menu-toggle',
-      mainMenu: '.nav-main'
+      mainMenu: '.nav-main',
+      mainHero: '.main-hero'
     }
   };
 
@@ -69,6 +71,14 @@
     app.slideToSection();
     app.menuToogle();
     app.trackCtas();
+
+    app.open()
+  };
+
+  app.open = function() {
+    setTimeout(function() {
+      $(app.elements.mainHero).addClass('showme');
+    }, 1000);
   };
 
   // Titles
@@ -80,7 +90,7 @@
     // correct heading based on app object
     function findHeadings() {
       $('[data-heading="' + prop + '"]').each(function(){
-        $(this).attr('data-attr', $(this).text(app.titles[prop]));
+        $(this).text(app.titles[prop]);
       });
     }
   };
