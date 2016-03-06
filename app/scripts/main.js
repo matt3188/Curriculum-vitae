@@ -72,7 +72,7 @@
     app.menuToogle();
     app.trackCtas();
 
-    app.open()
+    app.open();
   };
 
   app.open = function() {
