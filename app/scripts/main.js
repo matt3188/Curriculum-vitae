@@ -110,6 +110,8 @@
     app.populateExperience();
     app.slideToSection();
     app.menuToogle();
+    app.addDownloadbtn();
+
     app.trackCtas();
     app.open();
   };
@@ -145,6 +147,10 @@
         $(this).text(app.titles[prop]);
       });
     }
+  };
+
+  app.addDownloadbtn = function() {
+    $(app.selectors.ctaBanner).append('<button id="downloadCV" href="" class="btn btn-download cta">Download CV</button>');
   };
 
   // Main hero
