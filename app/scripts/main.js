@@ -62,11 +62,12 @@
       'Photoshop': 90,
       'Drupal': 45
     },
-    elements: {
+    selectors: {
       heading: '.heading',
       menuToggle: '#menu-toggle',
       mainMenu: '.nav-main',
-      mainHero: '.main-hero'
+      mainHero: '.main-hero',
+      ctaBanner: '.cta-banner'
     }
   };
 
@@ -93,7 +94,7 @@
 
   app.open = function() {
     setTimeout(function() {
-      $(app.elements.mainHero).addClass('showme');
+      $(app.selectors.mainHero).addClass('showme');
     }, 1000);
   };
 
@@ -209,9 +210,9 @@
   };
 
   app.menuToogle = function() {
-    $(app.elements.menuToggle).on('click', function() {
+    $(app.selectors.menuToggle).on('click', function() {
       $(this).toggleClass('open');
-      $(app.elements.mainMenu).toggleClass('on-screen');
+      $(app.selectors.mainMenu).toggleClass('on-screen');
     });
   };
 
