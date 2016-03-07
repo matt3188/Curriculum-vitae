@@ -39,9 +39,7 @@
         listClass: 'horizontal-list experience-list clearfix'
       },
       interests: {
-        class: 'interests',
-      },
-      contact: {
+        class: 'interests'
       }
     },
     sections: {
