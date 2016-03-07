@@ -4,22 +4,25 @@
 
 .experience-list {
 
+  // Timeline
   &:after {
     content:'';
     width: 5px;
     background-color: rgba($primary-green, 0.2);
     display: block;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 0;
     bottom: 25%;
     right: 0;
     margin: auto;
     z-index: -1;
+    @media only screen and (min-width: $mobile-width) {
+      bottom: 35%;
+    }
   }
 }
 .experience-item {
-  margin-bottom: 20px;
 
   .experience-item-inner {
     position: relative;

@@ -35,8 +35,13 @@
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
+<<<<<<< HEAD
       interests: 'Interests',
       contact: 'Please feel free to contact me'
+=======
+      contact: 'Please feel free to contact me',
+      interests: 'Interests'
+>>>>>>> master
     },
     info: {
       name: 'Matt Coleman',
@@ -65,7 +70,8 @@
     elements: {
       heading: '.heading',
       menuToggle: '#menu-toggle',
-      mainMenu: '.nav-main'
+      mainMenu: '.nav-main',
+      mainHero: '.main-hero'
     }
   };
 
@@ -80,11 +86,20 @@
     app.slideToSection();
     app.menuToogle();
     app.trackCtas();
+    app.open();
+  };
+
   // Creates section skeleton in which to populate
   app.createSections = function() {
     for (var prop in app.mainSections) {
       $('.container').append('<article id="' + prop + '" class="section ' + app.mainSections[prop] + ' hideme"><h2 class="heading" data-heading="' + prop + '"></h2></div>');
     }
+  };
+
+  app.open = function() {
+    setTimeout(function() {
+      $(app.elements.mainHero).addClass('showme');
+    }, 1000);
   };
 
   // Titles
@@ -176,7 +191,7 @@
     };
 
     for (var prop in jobs) {
-      $(app.sections.experienceList).append('<li class="col-1-2 experience-item"><div class="experience-item-inner">' + jobs[prop].toString() + '</div></li>');
+      $(app.sections.experienceList).append('<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>');
     }
 
     $('.experience-list li:even').addClass('float-left');
@@ -226,9 +241,7 @@
       var bottomOfWindow = $(window).scrollTop() + $(window).height();
       /* If the object is completely visible in the window, fade it it */
       if( bottomOfWindow > bottomofObject ){
-        $(this).animate({
-          'opacity': '1'
-        }, 500);
+        $(this).addClass('showme');
       }
     });
   });

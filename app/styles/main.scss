@@ -11,6 +11,7 @@
 @import 'image';
 @import 'btn';
 @import 'list';
+@import 'heading';
 @import 'form';
 @import 'speech-bubble';
 @import 'skills';
@@ -46,4 +47,10 @@ body {
 
 .hideme {
   opacity: 0;
+  transform: translate3d(0,30%,0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.showme {
+  opacity: 1;
+  transform: translate3d(0,0,0);
 }
