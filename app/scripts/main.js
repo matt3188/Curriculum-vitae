@@ -14,12 +14,35 @@
       ctaBefore: function($button){ return $button; }
     },
     mainSections: {
-      cta: 'cta-banner',
-      skills: 'professional-skills',
-      portfolio: 'portfolio',
-      experience: 'experience',
-      interests: 'interests',
-      contact: 'contact'
+      intro: {
+        class: 'intro',
+        hasShadow: false
+      },
+      cta: {
+        class: 'cta-banner',
+        hasShadow: false
+      },
+      skills: {
+        class: 'professional-skills',
+        listEl: 'ul',
+        listClass: 'stacked-list skill-list'
+      },
+      portfolio: {
+        class: 'portfolio',
+        listEl: 'ul',
+        listClass: 'horizontal-list portfolio-list'
+      },
+      experience: {
+        hasShadow: false,
+        class: 'experience',
+        listEl: 'ul',
+        listClass: 'horizontal-list experience-list clearfix'
+      },
+      interests: {
+        class: 'interests',
+      },
+      contact: {
+      }
     },
     sections: {
       info: '.my-info',
@@ -32,6 +55,7 @@
       socialList: '.social-list'
     },
     titles: {
+      hero: 'Hero',
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
