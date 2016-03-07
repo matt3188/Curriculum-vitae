@@ -153,6 +153,10 @@
     $(app.selectors.ctaBanner).append('<button id="downloadCV" href="" class="btn btn-download cta">Download CV</button>');
   };
 
+  app.populateIntro = function() {
+    $(app.sections.intro).append('<p>' + app.intro + '</p>');
+  };
+
   // Main hero
   app.populateHero = function() {
     $(app.sections.info).prepend(
@@ -168,10 +172,6 @@
     for (var prop in app.contactInfo) {
       $(app.sections.infoList).append('<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>');
     }
-  };
-
-  app.populateIntro = function() {
-    $(app.sections.intro).append('<p>' + app.intro + '</p>');
   };
 
   // Skills section
