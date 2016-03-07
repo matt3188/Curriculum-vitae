@@ -112,8 +112,8 @@
     app.menuToogle();
     app.addDownloadbtn();
 
+    app.animateIn();
     app.trackCtas();
-    app.open();
   };
 
   // Creates section skeleton in which to populate with content
@@ -129,7 +129,7 @@
     callback();
   };
 
-  app.open = function() {
+  app.animateIn = function() {
     setTimeout(function() {
       $(app.selectors.mainHero).addClass('showme');
     }, 1000);
