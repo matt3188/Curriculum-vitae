@@ -35,13 +35,8 @@
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
-<<<<<<< HEAD
-      interests: 'Interests',
-      contact: 'Please feel free to contact me'
-=======
       contact: 'Please feel free to contact me',
       interests: 'Interests'
->>>>>>> master
     },
     info: {
       name: 'Matt Coleman',
