@@ -13,16 +13,46 @@
       ctaSelector: '.cta',
       ctaBefore: function($button){ return $button; }
     },
+    mainSections: {
+      intro: {
+        class: 'intro'
+      },
+      cta: {
+        class: 'cta-banner',
+        hasShadow: false
+      },
+      skills: {
+        class: 'professional-skills',
+        listEl: 'ul',
+        listClass: 'stacked-list skill-list'
+      },
+      portfolio: {
+        class: 'portfolio',
+        listEl: 'ul',
+        listClass: 'horizontal-list portfolio-list'
+      },
+      experience: {
+        hasShadow: false,
+        class: 'experience',
+        listEl: 'ul',
+        listClass: 'horizontal-list experience-list clearfix'
+      },
+      interests: {
+        class: 'interests'
+      }
+    },
     sections: {
       info: '.my-info',
       infoList: '.info-list',
       intro: '.intro',
+      cta: '.cta-banner',
       skills: '.professional-skills',
       skillsList: '.skill-list',
       experienceList: '.experience-list',
       socialList: '.social-list'
     },
     titles: {
+      hero: 'Hero',
       skills: 'Professional Skills',
       experience: 'Work Experience',
       portfolio: 'Portfolio',
@@ -45,7 +75,7 @@
       twitter: 'https://twitter.com/Matt__Coleman',
       facebook: 'https://www.facebook.com/matt.coleman.562'
     },
-    intro: 'Short intro to introduce my self',
+    intro: 'My key skills include but are not limited too HTML, CSS3, Javascript/ jQuery, Wordpress development, Web Design, Cross browser compatibility and implementing JQuery Plugins. I hand code all my work using SublimeText and I adopt a DRY approach, implementing SMACSS along the way. I’m proficient with Adobe’s Creative suite including Photoshop and Illustrator and I love semantic and scalable code. I am a Front-end developer with a strong background in design. This has allowed me to bridge the gap between design and development and bring well rounded solutions to the user. I also have experience with JIRA and Agile methodology. I am passionate and creative with a keen eye for detail. Nothing makes me happier than a well thought out website paying particular attention to how a user can interact and navigate through a site. Summary of skills: HTML, CSS3/SASS, Javascript/ jQuery, Grunt/ Gulp, Git, Wordpress, Web Design.',
     skills: {
       'Wordpress': 80,
       'Javascript': 65,
@@ -53,15 +83,24 @@
       'Photoshop': 90,
       'Drupal': 45
     },
-    elements: {
+    selectors: {
+      mainContent: '.main-content',
       heading: '.heading',
       menuToggle: '#menu-toggle',
       mainMenu: '.nav-main',
-      mainHero: '.main-hero'
+      mainHero: '.main-hero',
+      ctaBanner: '.cta-banner'
     }
   };
 
   app.init = function init() {
+    app.createSections(function() {
+      app.launch();
+    });
+  };
+
+  app.launch = function() {
+    app.contactForm();
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
@@ -70,14 +109,28 @@
     app.populateExperience();
     app.slideToSection();
     app.menuToogle();
+    app.addDownloadbtn();
     app.trackCtas();
 
-    app.open();
+    app.animateIn();
   };
 
-  app.open = function() {
+  // Creates section skeleton in which to populate with content
+  app.createSections = function(callback) {
+    for (var prop in app.mainSections) {
+      var shadow = app.mainSections[prop].hasShadow;
+      $('.main-content').append(
+        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ((shadow === false) ? '' : ' has-shadow') + ' hideme">' +
+          '<h2 class="heading" data-heading="' + prop + '"></h2>' +
+          '<' + app.mainSections[prop].listEl + ' class="list ' + app.mainSections[prop].listClass + '"></' + app.mainSections[prop].el + '>'
+      );
+    }
+    callback();
+  };
+
+  app.animateIn = function() {
     setTimeout(function() {
-      $(app.elements.mainHero).addClass('showme');
+      $(app.selectors.mainHero).addClass('showme');
     }, 1000);
   };
 
@@ -95,6 +148,14 @@
     }
   };
 
+  app.addDownloadbtn = function() {
+    $(app.selectors.ctaBanner).append('<button id="downloadCV" href="" class="btn btn-download cta">Download CV</button>');
+  };
+
+  app.populateIntro = function() {
+    $(app.sections.intro).append('<p>' + app.intro + '</p>');
+  };
+
   // Main hero
   app.populateHero = function() {
     $(app.sections.info).prepend(
@@ -110,10 +171,6 @@
     for (var prop in app.contactInfo) {
       $(app.sections.infoList).append('<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>');
     }
-  };
-
-  app.populateIntro = function() {
-    $(app.sections.intro).append('<p>' + app.intro + '</p>');
   };
 
   // Skills section
@@ -193,10 +250,39 @@
   };
 
   app.menuToogle = function() {
-    $(app.elements.menuToggle).on('click', function() {
+    $(app.selectors.menuToggle).on('click', function() {
       $(this).toggleClass('open');
-      $(app.elements.mainMenu).toggleClass('on-screen');
+      $(app.selectors.mainMenu).toggleClass('on-screen');
     });
+  };
+
+  app.contactForm = function() {
+    $(app.selectors.mainContent).append('<div class="col-1-2">' +
+      '<article id="contact" class="section contact has-shadow hideme">' +
+        '<h2 class="heading" data-heading="contact"></h2>' +
+        '<form class="form stacked-form">' +
+          '<div class="field">' +
+            '<label>Name</label>' +
+            '<input type="text" name="name" placeholder="Name">' +
+          '</div>' +
+          '<div class="field">' +
+            '<label>Email</label>' +
+            '<input type="email" name="email" placeholder="Email">' +
+          '</div>' +
+          '<div class="field">' +
+            '<label>Subject</label>' +
+            '<input type="text" name="subject" placeholder="I have a really awesome job for you...">' +
+          '</div>' +
+          '<div class="field">' +
+            '<label>Message</label>' +
+            '<input type="text" name="message" placeholder="Message">' +
+          '</div>' +
+          '<div class="form-controls">' +
+            '<input type="submit" value="Submit">' +
+          '</div>' +
+        '</form>' +
+      '</article>' +
+    '</div>');
   };
 
   // Set up click listeners for links
