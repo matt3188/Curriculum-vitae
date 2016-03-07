@@ -257,6 +257,35 @@
     });
   };
 
+  app.contactForm = function() {
+    $(app.selectors.mainContent).append('<div class="col-1-2">' +
+      '<article id="contact" class="section contact has-shadow hideme">' +
+        '<h2 class="heading" data-heading="contact"></h2>' +
+        '<form class="form stacked-form">' +
+          '<div class="field">' +
+            '<label>Name</label>' +
+            '<input type="text" name="name" placeholder="Name">' +
+          '</div>' +
+          '<div class="field">' +
+            '<label>Email</label>' +
+            '<input type="email" name="email" placeholder="Email">' +
+          '</div>' +
+          '<div class="field">' +
+            '<label>Subject</label>' +
+            '<input type="text" name="subject" placeholder="I have a really awesome job for you...">' +
+          '</div>' +
+          '<div class="field">' +
+            '<label>Message</label>' +
+            '<input type="text" name="message" placeholder="Message">' +
+          '</div>' +
+          '<div class="form-controls">' +
+            '<input type="submit" value="Submit">' +
+          '</div>' +
+        '</form>' +
+      '</article>' +
+    '</div>');
+  };
+
   // Set up click listeners for links
   app.trackCtas = function() {
     $(app.config.ctaSelector).preBind('click', function() {
