@@ -87,6 +87,7 @@
       'Drupal': 45
     },
     selectors: {
+      mainContent: '.main-content',
       heading: '.heading',
       menuToggle: '#menu-toggle',
       mainMenu: '.nav-main',
@@ -102,6 +103,7 @@
   };
 
   app.launch = function() {
+    app.contactForm();
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
@@ -111,9 +113,9 @@
     app.slideToSection();
     app.menuToogle();
     app.addDownloadbtn();
+    app.trackCtas();
 
     app.animateIn();
-    app.trackCtas();
   };
 
   // Creates section skeleton in which to populate with content
