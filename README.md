@@ -8,3 +8,4 @@ Click here to learn [a little about me](http://matt3188.github.io/Curriculum-vit
 - Create elements with javascript and test to see if they are present before passing CI
 - Find a way to specify the list element (if) needed for a particular section and specify class names needed
 - Intergrate sendgrid with contact form and test
+- Make var app = {} a seperate file
