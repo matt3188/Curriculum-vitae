@@ -72,7 +72,12 @@
   };
 
   app.init = function init() {
-    app.createSections();
+    app.createSections(function() {
+      app.launch();
+    });
+  };
+
+  app.launch = function() {
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
@@ -85,11 +90,17 @@
     app.open();
   };
 
-  // Creates section skeleton in which to populate
-  app.createSections = function() {
+  // Creates section skeleton in which to populate with content
+  app.createSections = function(callback) {
     for (var prop in app.mainSections) {
-      $('.container').append('<article id="' + prop + '" class="section ' + app.mainSections[prop] + ' hideme"><h2 class="heading" data-heading="' + prop + '"></h2></div>');
+      var shadow = app.mainSections[prop].hasShadow;
+      $('.main-content').append(
+        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ((shadow === false) ? '' : ' has-shadow') + ' hideme">' +
+          '<h2 class="heading" data-heading="' + prop + '"></h2>' +
+          '<' + app.mainSections[prop].listEl + ' class="list ' + app.mainSections[prop].listClass + '"></' + app.mainSections[prop].el + '>'
+      );
     }
+    callback();
   };
 
   app.open = function() {
