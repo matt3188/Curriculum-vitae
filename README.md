@@ -9,3 +9,4 @@ Click here to learn [a little about me](http://matt3188.github.io/Curriculum-vit
 - Find a way to specify the list element (if) needed for a particular section and specify class names needed
 - Intergrate sendgrid with contact form and test
 - Make var app = {} a seperate file
+- Update PDF CV to link to site
