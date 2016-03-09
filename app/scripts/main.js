@@ -195,8 +195,8 @@
           this.initialize.apply(this, arguments);
       };
 
-      for (var prop in methods) {
-         klass.prototype[prop] = methods[prop];
+      for (var property in methods) {
+         klass.prototype[property] = methods[property];
       }
 
       if (!klass.prototype.initialize) {
