@@ -62,7 +62,7 @@
     }
   }
 
-  &.even {
+  &:nth-child(odd) {
     clear: left;
 
     @media only screen and (min-width: $mobile-width) {
@@ -83,7 +83,7 @@
     }
   }
 
-  &.odd {
+  &:nth-child(even) {
     clear: right;
 
     @media only screen and (min-width: $mobile-width) {

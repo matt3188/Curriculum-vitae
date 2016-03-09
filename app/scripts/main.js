@@ -93,7 +93,8 @@
       menuToggle: '#menu-toggle',
       mainMenu: '.nav-main',
       mainHero: '.main-hero',
-      ctaBanner: '.cta-banner'
+      ctaBanner: '.cta-banner',
+      hidden: '.hideme'
     },
     class: {
       show: 'showme',
@@ -297,7 +298,7 @@
 
   $( window ).scroll(function() {
     /* Check the location of each desired element */
-    $( '.' + app.class.hide ).each(function() {
+    $( app.selectors.hidden ).each(function() {
       var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
       var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
       /* If the object is completely visible in the window, fade it it */
