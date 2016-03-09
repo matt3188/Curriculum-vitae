@@ -131,9 +131,11 @@
   // Creates section skeleton in which to populate with content
   app.createSections = function( callback ) {
     for ( var prop in app.mainSections ) {
+
       var shadow = app.mainSections[prop].hasShadow;
+
       $( app.selectors.mainContent ).append(
-        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ( ( shadow === false ) ? '' : ' has-shadow' ) + app.class.hide + '">' +
+        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ( ( shadow === false ) ? '' : ' has-shadow ' ) + app.class.hide + '">' +
         '<h2 class="heading" data-heading="' + prop + '"></h2>' +
         '<' + app.mainSections[prop].listEl + ' class="list ' + app.mainSections[prop].listClass + '"></' + app.mainSections[prop].el + '>'
       );
@@ -226,9 +228,6 @@
     for ( var prop in jobs ) {
       $( app.sections.experienceList ).append( '<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>' );
     }
-
-    $( '.experience-list li:even' ).addClass( app.class.even );
-    $( '.experience-list li:odd' ).addClass( app.class.odd );
   };
 
   app.slideToSection = function() {
