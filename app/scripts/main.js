@@ -94,6 +94,14 @@
       mainMenu: '.nav-main',
       mainHero: '.main-hero',
       ctaBanner: '.cta-banner'
+    },
+    class: {
+      show: 'showme',
+      hide: 'hideme',
+      odd: 'odd',
+      even: 'even',
+      open: 'open',
+      visible: 'on-screen'
     }
   };
 
@@ -123,8 +131,8 @@
   app.createSections = function( callback ) {
     for ( var prop in app.mainSections ) {
       var shadow = app.mainSections[prop].hasShadow;
-      $( '.main-content' ).append(
-        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ( ( shadow === false ) ? '' : ' has-shadow' ) + ' hideme">' +
+      $( app.selectors.mainContent ).append(
+        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ( ( shadow === false ) ? '' : ' has-shadow' ) + app.class.hide + '">' +
         '<h2 class="heading" data-heading="' + prop + '"></h2>' +
         '<' + app.mainSections[prop].listEl + ' class="list ' + app.mainSections[prop].listClass + '"></' + app.mainSections[prop].el + '>'
       );
@@ -134,7 +142,7 @@
 
   app.animateIn = function() {
     setTimeout(function() {
-      $( app.selectors.mainHero ).addClass( 'showme' );
+      $( app.selectors.mainHero ).addClass( app.class.show );
     }, 1000);
   };
 
@@ -218,8 +226,8 @@
       $( app.sections.experienceList ).append( '<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>' );
     }
 
-    $( '.experience-list li:even' ).addClass( 'even' );
-    $( '.experience-list li:odd' ).addClass( 'odd' );
+    $( '.experience-list li:even' ).addClass( app.class.even );
+    $( '.experience-list li:odd' ).addClass( app.class.odd );
   };
 
   app.slideToSection = function() {
@@ -238,9 +246,9 @@
   };
 
   app.menuToogle = function() {
-    $( app.selectors.menuToggle ).on('click', function() {
-      $( this ).toggleClass('open');
-      $( app.selectors.mainMenu ).toggleClass( 'on-screen' );
+    $( app.selectors.menuToggle ).on( 'click', function() {
+      $( this ).toggleClass( app.class.open );
+      $( app.selectors.mainMenu ).toggleClass( app.class.visible );
     });
   };
 
@@ -289,12 +297,12 @@
 
   $( window ).scroll(function() {
     /* Check the location of each desired element */
-    $( '.hideme' ).each(function() {
+    $( '.' + app.class.hide ).each(function() {
       var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
       var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
       /* If the object is completely visible in the window, fade it it */
       if ( bottomOfWindow > bottomofObject ) {
-        $( this ).addClass( 'showme' );
+        $( this ).addClass( app.class.show );
       }
     });
   });
