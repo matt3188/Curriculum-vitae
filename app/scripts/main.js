@@ -192,37 +192,21 @@
   };
 
   app.populateExperience = function() {
-    var Class = function(methods) {
-      var klass = function() {
-          this.initialize.apply(this, arguments);
+    // Setup Job instance
+    function Job( company, startDate, endDate, role, content ) {
+      this.company = company;
+      this.startDate = startDate;
+      this.endDate = endDate;
+      this.role = role;
+      this.content = content;
+
+      this.toString = function() {
+        return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.endDate + '</span></time>' +
+          '<h3 class="heading">' + this.company + '</h3>' +
+          '<p class="role">' + this.role + '</p>' +
+          '<p class="content">' + this.content + '</p>';
       };
-
-      for (var property in methods) {
-         klass.prototype[property] = methods[property];
-      }
-
-      if (!klass.prototype.initialize) {
-        klass.prototype.initialize = function() {};
-      }
-
-      return klass;
-    };
-
-    var Job = new Class({
-      initialize: function(company, startDate, finDate, role, content) {
-        this.company = company;
-        this.startDate = startDate;
-        this.finDate = finDate;
-        this.role = role;
-        this.content = content;
-      },
-      toString: function() {
-        return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.finDate + '</span></time>' +
-               '<h3 class="heading">' + this.company + '</h3>' +
-               '<p class="role">' + this.role + '</p>' +
-               '<p class="content">' + this.content + '</p>';
-      }
-    });
+    }
 
     var jobs = {
       popcorn: new Job( 'Popcorn', 'February 2012', 'August 2014', 'Customer service manager/ Web Developer', 'Lorem ipsum' ),
