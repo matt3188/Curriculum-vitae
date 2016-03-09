@@ -62,7 +62,7 @@
     }
   }
 
-  &.float-left {
+  &:nth-child(odd) {
     clear: left;
 
     @media only screen and (min-width: $mobile-width) {
@@ -83,8 +83,9 @@
     }
   }
 
-  &.float-right {
+  &:nth-child(even) {
     clear: right;
+
     @media only screen and (min-width: $mobile-width) {
       padding-left: 30px;
     }
