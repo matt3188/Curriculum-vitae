@@ -125,6 +125,7 @@
     app.menuToogle();
     app.addDownloadbtn();
     app.trackCtas();
+    portfolio.populatePortfolio();
 
     app.animateIn();
   };
@@ -289,7 +290,7 @@
         id = $button.attr( 'id' ),
         href = app.ctas[id];
       if ( href !== false ) {
-        // Update link href
+        // Update link
         $button.attr( 'href', href );
       }
       app.config.ctaBefore( $button );
@@ -297,11 +298,11 @@
   };
 
   $( window ).scroll(function() {
-    /* Check the location of each desired element */
+    // Check the location of each element
     $( app.selectors.hidden ).each(function() {
       var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
       var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
-      /* If the object is completely visible in the window, fade it it */
+      // If the object is completely visible in the window, add the 'showme' class
       if ( bottomOfWindow > bottomofObject ) {
         $( this ).addClass( app.class.show );
       }
