@@ -102,7 +102,8 @@
       odd: 'odd',
       even: 'even',
       open: 'open',
-      visible: 'on-screen'
+      visible: 'on-screen',
+      shadow: 'has-shadow'
     }
   };
 
@@ -135,7 +136,7 @@
       var shadow = app.mainSections[prop].hasShadow;
 
       $( app.selectors.mainContent ).append(
-        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ( ( shadow === false ) ? '' : ' has-shadow ' ) + app.class.hide + '">' +
+        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ' ' + ( ( shadow === false ) ? '' : app.class.shadow ) + ' ' + app.class.hide + '">' +
         '<h2 class="heading" data-heading="' + prop + '"></h2>' +
         '<' + app.mainSections[prop].listEl + ' class="list ' + app.mainSections[prop].listClass + '"></' + app.mainSections[prop].el + '>'
       );
