@@ -289,7 +289,7 @@
         id = $button.attr( 'id' ),
         href = app.ctas[id];
       if ( href !== false ) {
-        // Update link href
+        // Update link
         $button.attr( 'href', href );
       }
       app.config.ctaBefore( $button );
@@ -301,7 +301,7 @@
     $( app.selectors.hidden ).each(function() {
       var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
       var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
-      /* If the object is completely visible in the window, fade it it */
+      // If the object is completely visible in the window, add class 'showme'
       if ( bottomOfWindow > bottomofObject ) {
         $( this ).addClass( app.class.show );
       }
