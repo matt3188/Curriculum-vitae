@@ -11,3 +11,4 @@ Click here to learn [a little about me](http://matt3188.github.io/Curriculum-vit
 - Make var app = {} a seperate file
 - Update PDF CV to link to site
 - Modualise Javascript. Move all sections (Portfolio, Experience, etc.) into their own files that can all be fired by app.
+- Remove jQuery dependency
