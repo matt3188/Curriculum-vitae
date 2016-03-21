@@ -297,7 +297,7 @@
   };
 
   $( window ).scroll(function() {
-    /* Check the location of each desired element */
+    // Check the location of each element
     $( app.selectors.hidden ).each(function() {
       var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
       var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
