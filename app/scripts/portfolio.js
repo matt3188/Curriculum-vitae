@@ -52,6 +52,18 @@ portfolio.setupSection = function() {
 };
 
 portfolio.populatePortfolio = function() {
+
+  // Pull out the rest of the data for Portfolio items
+  for ( var prop in portfolio.items ) {
+    $( portfolio.selectors.portfolioList ).append( '<li class="' + prop + '">' +
+      '<h2 class="heading">' + portfolio.items[prop].title + '</h2>' +
+      '<p class="client">' + portfolio.items[prop].client + '</p>' +
+      '<a href="' + portfolio.items[prop].link + '" target="_blank">Link</a>' +
+      '<p>' + portfolio.items[prop].desc + '</p>' +
+    '</li>' );
+  }
+
+  // Populate images
   var obj = portfolio;
 
   function goThroughObj(obj) {
@@ -72,7 +84,6 @@ portfolio.populatePortfolio = function() {
       }
     }
   }
-
   function showObjData() {
     var key,
         title,
