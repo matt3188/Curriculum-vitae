@@ -5,8 +5,7 @@
 var portfolio = {
   settings: {
     sectionName: 'portfolio',
-    hasShadow: true,
-    listEl: 'ul',
+    hasShadow: true
   },
   selectors: {
     portfolioList: '.portfolio-list',
