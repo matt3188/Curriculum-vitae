@@ -7,6 +7,8 @@ var portfolio = {
     sectionName: 'portfolio',
     hasShadow: true,
     listEl: 'ul',
+  },
+  selectors: {
     portfolioList: '.portfolio-list',
     portfolio: '.portfolio',
     imageList: '.portfolio-image-list',
@@ -64,7 +66,7 @@ portfolio.populatePortfolio = function() {
 
           var images = obj[property];
           for ( var i = images.length - 1; i >= 0; i-- ) {
-            $( '<li><img src="' + images[i] + '" width="100"></li>' ).appendTo( portfolio.settings.portfolioList );
+            $( '<li><img src="' + images[i] + '" width="100"></li>' ).appendTo( portfolio.selectors.portfolioList );
           }
         }
       }
@@ -83,7 +85,7 @@ portfolio.populatePortfolio = function() {
     }
   }
 
-  $( portfolio.settings.portfolioList ).append( showObjData );
+  $( portfolio.selectors.portfolioList ).append( showObjData );
 
 };
 
