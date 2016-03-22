@@ -4,10 +4,19 @@
 
 var portfolio = {
   settings: {
+    sectionName: 'portfolio',
+    hasShadow: true,
+    listEl: 'ul',
     portfolioList: '.portfolio-list',
     portfolio: '.portfolio',
-    imageList: '.portfolio-image-list'
+    imageList: '.portfolio-image-list',
   },
+  class: {
+    shadow: 'has-shadow',
+    hide: 'hideme',
+    listClass: 'horizontal-list portfolio-list'
+  },
+  // Portfolio items
   item01: [{
     tile: 'Item title',
     client: 'Client',
@@ -24,9 +33,18 @@ var portfolio = {
   }]
 };
 
+portfolio.setupSection = function() {
+
+  var shadow = this.settings.hasShadow;
+
+  $( app.selectors.mainContent ).append(
+    '<article id="' + this.settings.sectionName + '" class="section ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+    '<h2 class="heading">Portfolio</h2>' +
+    '<' + this.settings.listEl + ' class="list ' + this.class.listClass + '"></' + this.settings.listEl + '>'
+  );
+};
 
 portfolio.populatePortfolio = function() {
-
   var obj = portfolio;
 
   function goThroughObj(obj) {
@@ -41,7 +59,6 @@ portfolio.populatePortfolio = function() {
 
           var images = obj[property];
           for ( var i = images.length - 1; i >= 0; i-- ) {
-            // $( portfolio.settings.portfolio ).append( '<li><img src="' + images[i] + '" width="100"></li>' );
             $( '<li><img src="' + images[i] + '" width="100"></li>' ).appendTo( portfolio.settings.portfolioList );
           }
         }
@@ -49,12 +66,12 @@ portfolio.populatePortfolio = function() {
     }
   }
 
-   function showObjData() {
-      var key,
-          title,
-          element = document.getElementById( 'demo' );
+  function showObjData() {
+    var key,
+        title,
+        element = document.getElementById( 'demo' );
 
-     for ( key in obj ) {
+    for ( key in obj ) {
       if ( obj[key] instanceof Array ) {
         goThroughObj( obj[key] );
       }
@@ -62,4 +79,8 @@ portfolio.populatePortfolio = function() {
   }
 
   $( portfolio.settings.portfolioList ).append( showObjData );
+
 };
+
+portfolio.setupSection();
+portfolio.populatePortfolio();
