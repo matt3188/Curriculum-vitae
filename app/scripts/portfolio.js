@@ -18,20 +18,22 @@ var portfolio = {
     imageListClass: 'horizontal-list portfolio-image-list'
   },
   // Portfolio items
-  item01: [{
-    tile: 'Item title',
-    client: 'Client',
-    link: 'Link',
-    desc: 'Description',
-    images: ['images/image01.jpg', 'images/image02.jpg']
-  }],
-  item02: [{
-    tile: 'Item title',
-    client: 'Client',
-    link: 'Link',
-    desc: 'Description',
-    images: ['images/image03.jpg', 'images/image04.jpg']
-  }]
+  items: {
+    item01: {
+      title: 'First Item title',
+      client: 'First Client',
+      link: 'https://matt3188.github.io/Curriculum-vitae/',
+      desc: 'First Description',
+      images: ['images/image01.jpg', 'images/image02.jpg']
+    },
+    item02: {
+      title: 'Second Item title',
+      client: 'Second Client',
+      link: 'https://matt3188.github.io/Curriculum-vitae/',
+      desc: 'Second Description',
+      images: ['images/image03.jpg', 'images/image04.jpg']
+    }
+  }
 };
 
 portfolio.setupSection = function() {
