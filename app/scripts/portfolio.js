@@ -14,7 +14,8 @@ var portfolio = {
   class: {
     shadow: 'has-shadow',
     hide: 'hideme',
-    listClass: 'horizontal-list portfolio-list'
+    listClass: 'horizontal-list portfolio-list',
+    imageListClass: 'horizontal-list portfolio-image-list'
   },
   // Portfolio items
   item01: [{
@@ -35,12 +36,14 @@ var portfolio = {
 
 portfolio.setupSection = function() {
 
-  var shadow = this.settings.hasShadow;
+  var shadow = this.settings.hasShadow,
+      element = ( ( typeof this.settings.listEl !== "undefined" ) ? portfolio.settings.listEl : 'ul'  );
 
   $( app.selectors.mainContent ).append(
     '<article id="' + this.settings.sectionName + '" class="section ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
     '<h2 class="heading">Portfolio</h2>' +
-    '<' + this.settings.listEl + ' class="list ' + this.class.listClass + '"></' + this.settings.listEl + '>'
+    '<' + element + ' class="list ' + portfolio.class.listClass + '"></' + element + '>' +
+    '<' + element + ' class="list ' + portfolio.class.imageListClass + '"></' + element + '>'
   );
 };
 
