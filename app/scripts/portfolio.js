@@ -5,7 +5,7 @@
 var portfolio = {
   settings: {
     sectionName: 'portfolio',
-    hasShadow: true
+    hasShadow: false
   },
   selectors: {
     portfolioList: '.portfolio-list',
@@ -37,67 +37,52 @@ var portfolio = {
   }
 };
 
+var shadow = portfolio.settings.hasShadow,
+    element = ( ( typeof portfolio.settings.listEl !== "undefined" ) ? portfolio.settings.listEl : 'ul'  );
+
 portfolio.setupSection = function() {
 
-  var shadow = this.settings.hasShadow,
-      element = ( ( typeof this.settings.listEl !== "undefined" ) ? portfolio.settings.listEl : 'ul'  );
 
   $( app.selectors.mainContent ).append(
     '<article id="' + this.settings.sectionName + '" class="section ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
-    '<h2 class="heading">Portfolio</h2>' +
-    '<' + element + ' class="list ' + portfolio.class.listClass + '"></' + element + '>' +
-    '<' + element + ' class="list ' + portfolio.class.imageListClass + '"></' + element + '>'
+      '<h2 class="heading">Portfolio</h2>' +
+      '<' + element + ' class="list ' + portfolio.class.listClass + '"></' + element + '>'
   );
 };
 
-portfolio.populatePortfolio = function() {
+portfolio.populatePortfolio = function(callback) {
 
-  // Pull out the rest of the data for Portfolio items
   for ( var prop in portfolio.items ) {
-    $( portfolio.selectors.portfolioList ).append( '<li class="' + prop + '">' +
-      '<h2 class="heading">' + portfolio.items[prop].title + '</h2>' +
-      '<p class="client">' + portfolio.items[prop].client + '</p>' +
-      '<a href="' + portfolio.items[prop].link + '" target="_blank">Link</a>' +
-      '<p>' + portfolio.items[prop].desc + '</p>' +
-    '</li>' );
-  }
+    var portfolioItem = document.getElementsByClassName('portfolio-list');
 
-  // Populate images
-  var obj = portfolio;
+    for (var i = portfolioItem.length - 1; i >= 0; i--) {
+      var item = portfolioItem[i];
 
-  function goThroughObj(obj) {
-    var htmlObj,
-        property;
+      if ( typeof prop === 'string' ) {
+        item.innerHTML = item.innerHTML +
+          '<li class="portfolio-item">' +
+            '<p>' + portfolio.items[prop].title + '</p>' +
+            '<p><a href="' + portfolio.items[prop].link + '" target="_blank">Link</a></p>' +
+            '<p>' + portfolio.items[prop].desc + '</p>' +
+            '<' + element + ' class="list ' + portfolio.class.imageListClass + '"></' + element + '>' +
+          '</li>';
+      }
 
-    for ( property in obj) {
-      if ( obj.hasOwnProperty( property ) ) {
-        if ( typeof obj[property] === "object" ) {
-
-          goThroughObj( obj[property] );
-
-          var images = obj[property];
-          for ( var i = images.length - 1; i >= 0; i-- ) {
-            $( '<li><img src="' + images[i] + '" width="100"></li>' ).appendTo( portfolio.selectors.portfolioList );
-          }
+      if ( typeof prop === 'string' ) {
+        for( var k = 0; k < portfolio.items[prop].images.length; k++ ) {
+          item.innerHTML = item.innerHTML +
+            '<img src="' + portfolio.items[prop].images[k] + '" width="100" />';
         }
       }
-    }
-  }
-  function showObjData() {
-    var key,
-        title,
-        element = document.getElementById( 'demo' );
 
-    for ( key in obj ) {
-      if ( obj[key] instanceof Array ) {
-        goThroughObj( obj[key] );
-      }
     }
   }
 
-  $( portfolio.selectors.portfolioList ).append( showObjData );
+  callback();
 
 };
 
 portfolio.setupSection();
-portfolio.populatePortfolio();
+portfolio.populatePortfolio(function() {
+  // slider.init();
+});
