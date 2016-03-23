@@ -82,15 +82,13 @@ portfolio.slider = function() {
   tinySlider({
     container: portfolioItems,
     responsive: {
-      500: 1,
-      800: 1,
+      480: 1
     }
   });
   tinySlider({
     container: responsive,
     responsive: {
-      500: 1,
-      800: 1,
+      480: 1
     }
   });
 };

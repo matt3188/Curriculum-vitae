@@ -8,7 +8,11 @@
 
   .portfolio-image-list,
   .portfolio-item-inner {
-    width: 50%;
-    float: left;
+    width: 100%;
+
+    @media only screen and (min-width: $mobile-width) {
+      width: 50%;
+      float: left;
+    }
   }
 }
