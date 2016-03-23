@@ -4,4 +4,10 @@
 
 .portfolio-item {
   width: 100%;
+
+  .portfolio-image-list,
+  .portfolio-item-inner {
+    width: 50%;
+    float: left;
+  }
 }

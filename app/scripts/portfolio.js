@@ -41,8 +41,6 @@ var shadow = portfolio.settings.hasShadow,
     element = ( ( typeof portfolio.settings.listEl !== "undefined" ) ? portfolio.settings.listEl : 'ul'  );
 
 portfolio.setupSection = function() {
-
-
   $( app.selectors.mainContent ).append(
     '<article id="' + this.settings.sectionName + '" class="section ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
       '<h2 class="heading">Portfolio</h2>' +
@@ -50,12 +48,12 @@ portfolio.setupSection = function() {
   );
 };
 
-portfolio.populatePortfolio = function(callback) {
+portfolio.populatePortfolio = function() {
   var innerHTML = '';
 
   var findImages = function() {
     portfolio.items[prop].images.forEach(function(url) {
-      images += '<li><img src="' + url + '" width="100"/></li>';
+      images += '<li class="image"><img src="' + url + '" width="100" /></li>';
     });
   };
 
@@ -64,21 +62,31 @@ portfolio.populatePortfolio = function(callback) {
 
     portfolio.items[prop].images = findImages();
 
-    innerHTML +='<li class="portfolio-item">' +
+    innerHTML +='<li class="portfolio-item section has-shadow">' +
+      '<div class="portfolio-item-inner">' +
         '<p>' + portfolio.items[prop].title + '</p>' +
         '<p><a href="' + portfolio.items[prop].link + '">Link</a></p>' +
         '<p>' + portfolio.items[prop].desc + '</p>' +
-        '<ul class="list horizontal-list portfolio-image-list">' + images + '</ul>' +
-      '</li>';
+      '</div>' +
+      '<ul class="list horizontal-list portfolio-image-list">' + images + '</ul>' +
+    '</li>';
   }
 
   document.getElementById( 'portfolio-list' ).innerHTML = innerHTML;
+};
 
-  callback();
+portfolio.slider = function() {
+  var responsive = document.querySelectorAll('.portfolio-image-list');
 
+  tinySlider({
+    container: responsive,
+    responsive: {
+      500: 1,
+      800: 1,
+    }
+  });
 };
 
 portfolio.setupSection();
-portfolio.populatePortfolio(function() {
-  // slider.init();
-});
+portfolio.populatePortfolio();
+portfolio.slider();
