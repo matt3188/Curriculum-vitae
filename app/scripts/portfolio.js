@@ -42,7 +42,7 @@ var shadow = portfolio.settings.hasShadow,
 
 portfolio.setupSection = function() {
   $( app.selectors.mainContent ).append(
-    '<article id="' + this.settings.sectionName + '" class="section ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+    '<article id="' + this.settings.sectionName + '" class=section " ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
       '<h2 class="heading">Portfolio</h2>' +
       '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>'
   );
@@ -76,8 +76,16 @@ portfolio.populatePortfolio = function() {
 };
 
 portfolio.slider = function() {
+  var portfolioItems = document.querySelector('#portfolio-list');
   var responsive = document.querySelectorAll('.portfolio-image-list');
 
+  tinySlider({
+    container: portfolioItems,
+    responsive: {
+      500: 1,
+      800: 1,
+    }
+  });
   tinySlider({
     container: responsive,
     responsive: {
