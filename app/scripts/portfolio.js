@@ -46,37 +46,33 @@ portfolio.setupSection = function() {
   $( app.selectors.mainContent ).append(
     '<article id="' + this.settings.sectionName + '" class="section ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
       '<h2 class="heading">Portfolio</h2>' +
-      '<' + element + ' class="list ' + portfolio.class.listClass + '"></' + element + '>'
+      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>'
   );
 };
 
 portfolio.populatePortfolio = function(callback) {
+  var innerHTML = '';
+
+  var findImages = function() {
+    portfolio.items[prop].images.forEach(function(url) {
+      images += '<li><img src="' + url + '" width="100"/></li>';
+    });
+  };
 
   for ( var prop in portfolio.items ) {
-    var portfolioItem = document.getElementsByClassName('portfolio-list');
+    var images = '';
 
-    for (var i = portfolioItem.length - 1; i >= 0; i--) {
-      var item = portfolioItem[i];
+    portfolio.items[prop].images = findImages();
 
-      if ( typeof prop === 'string' ) {
-        item.innerHTML = item.innerHTML +
-          '<li class="portfolio-item">' +
-            '<p>' + portfolio.items[prop].title + '</p>' +
-            '<p><a href="' + portfolio.items[prop].link + '" target="_blank">Link</a></p>' +
-            '<p>' + portfolio.items[prop].desc + '</p>' +
-            '<' + element + ' class="list ' + portfolio.class.imageListClass + '"></' + element + '>' +
-          '</li>';
-      }
-
-      if ( typeof prop === 'string' ) {
-        for( var k = 0; k < portfolio.items[prop].images.length; k++ ) {
-          item.innerHTML = item.innerHTML +
-            '<img src="' + portfolio.items[prop].images[k] + '" width="100" />';
-        }
-      }
-
-    }
+    innerHTML +='<li class="portfolio-item">' +
+        '<p>' + portfolio.items[prop].title + '</p>' +
+        '<p><a href="' + portfolio.items[prop].link + '">Link</a></p>' +
+        '<p>' + portfolio.items[prop].desc + '</p>' +
+        '<ul class="list horizontal-list portfolio-image-list">' + images + '</ul>' +
+      '</li>';
   }
+
+  document.getElementById( 'portfolio-list' ).innerHTML = innerHTML;
 
   callback();
 
