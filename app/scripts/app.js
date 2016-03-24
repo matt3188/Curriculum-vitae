@@ -19,11 +19,6 @@ var app = {
       listEl: 'ul',
       listClass: 'stacked-list skill-list'
     },
-    // portfolio: {
-    //   class: 'portfolio',
-    //   listEl: 'ul',
-    //   listClass: 'horizontal-list portfolio-list'
-    // },
     experience: {
       hasShadow: false,
       class: 'experience',
@@ -48,7 +43,6 @@ var app = {
     hero: 'Hero',
     skills: 'Professional Skills',
     experience: 'Work Experience',
-    // portfolio: 'Portfolio',
     contact: 'Please feel free to contact me',
     interests: 'Interests'
   },
