@@ -5,7 +5,7 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
-    "tiny-slider": "^0.3.0"
+    "tiny-slider": "https://github.com/matt3188/tiny-slider.git#d21ec1e00a9c486dd03b170da23dfba91b8b2a16"
   },
   "overrides": {
     "bootstrap-sass": {
