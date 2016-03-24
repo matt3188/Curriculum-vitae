@@ -1,7 +1,50 @@
 /**
  * Portfolio
  */
+#portfolio {
 
+  .tiny-slider {
+    position: relative;
+  }
+  .tiny-dots + .tiny-nav {
+    bottom: 0;
+    right: 0;
+
+    .tiny-next,
+    .tiny-prev {
+      margin: 0;
+    }
+  }
+  .tiny-nav {
+    display: none;
+
+    @media only screen and (min-width: $mobile-width) {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1;
+
+      .tiny-next,
+      .tiny-prev {
+        @extend .icon;
+        position: relative;
+        border: 2px solid white;
+        padding: 5px 17px 5px 7px;
+        float: left;
+        color: white;
+        background-color: rgba(0,0,0,0.8);
+      }
+      .tiny-prev {
+        @extend .icon-left-open;
+      }
+      .tiny-next {
+        @extend .icon-right-open;
+      }
+
+    }
+  }
+}
 .portfolio-item {
   width: 100%;
   clear: none;
@@ -25,36 +68,6 @@
     overflow: hidden;
     img {
       max-width: 100%;
-    }
-  }
-
-  .tiny-slider {
-    position: relative;
-  }
-
-  // Tiny Slider overides
-  .tiny-nav {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1;
-
-    .tiny-next,
-    .tiny-prev {
-      position: relative;
-      border: 2px solid white;
-      padding: 5px 17px 5px 7px;
-      float: left;
-      color: white;
-      background-color: rgba(0,0,0,0.8);
-      @extend .icon;
-    }
-
-    .tiny-prev {
-      @extend .icon-left-open;
-    }
-    .tiny-next {
-      @extend .icon-right-open;
     }
   }
 }

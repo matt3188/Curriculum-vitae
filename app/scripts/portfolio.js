@@ -92,10 +92,13 @@
 
     tinySlider({
       container: portfolioItems,
+      navText: ['', ''],
+      touch: false
     });
     tinySlider({
       container: portfolioImages,
       navText: ['', ''],
+      dots: false
     });
   };
 
