@@ -43,6 +43,11 @@
   var shadow = portfolio.settings.hasShadow,
       element = ( ( typeof portfolio.settings.listEl !== "undefined" ) ? portfolio.settings.listEl : 'ul'  );
 
+  portfolio.init = function() {
+    portfolio.setupSection();
+    portfolio.populatePortfolio();
+    portfolio.slider();
+  };
 
   portfolio.setupSection = function() {
     $( app.selectors.mainContent ).append(
@@ -91,8 +96,6 @@
     });
   };
 
+  return portfolio.init();
 
-portfolio.setupSection();
-portfolio.populatePortfolio();
-portfolio.slider();
 }());
