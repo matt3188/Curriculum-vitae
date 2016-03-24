@@ -18,7 +18,6 @@
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
-    app.populateIntro();
     app.populateSkills();
     app.populateExperience();
     app.slideToSection();
@@ -66,10 +65,6 @@
 
   app.addDownloadbtn = function() {
     $( app.selectors.ctaBanner ).append( '<button id="downloadCV" href="" class="btn btn-download cta">Download CV</button>' );
-  };
-
-  app.populateIntro = function() {
-    $( app.sections.intro ).append( '<p>' + app.intro + '</p>' );
   };
 
   // Main hero
