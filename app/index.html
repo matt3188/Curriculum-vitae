@@ -11,6 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/tiny-slider/src/css/tiny-slider.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -60,7 +61,7 @@
     </article>
 
     <div class="container">
-      <section class="main-content"></section>
+      <section id="main-content" class="main-content"></section>
 
       <footer class="footer footer-page">
         <ul class="list horizontal-list social-list"></ul>
@@ -81,6 +82,7 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/tiny-slider/src/js/tiny-slider.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -101,7 +103,9 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/prebind.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/portfolio.js"></script>
     <!-- endbuild -->
   </body>
 </html>
