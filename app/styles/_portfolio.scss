@@ -43,9 +43,10 @@
     .tiny-prev {
       position: relative;
       border: 2px solid white;
-      padding: 5px;
+      padding: 5px 17px 5px 7px;
       float: left;
       color: white;
+      background-color: rgba(0,0,0,0.8);
       @extend .icon;
     }
 

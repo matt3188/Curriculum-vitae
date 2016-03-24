@@ -94,7 +94,8 @@
       container: portfolioItems,
     });
     tinySlider({
-      container: portfolioImages
+      container: portfolioImages,
+      navText: ['', ''],
     });
   };
 
