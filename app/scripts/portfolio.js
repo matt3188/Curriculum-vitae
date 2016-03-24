@@ -50,15 +50,17 @@
   };
 
   portfolio.setupSection = function() {
-    $( app.selectors.mainContent ).append(
-      '<article id="' + this.settings.sectionName + '" class=section " ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
-        '<h2 class="heading">Portfolio</h2>' +
-        '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>'
-    );
+    var section = '';
+
+    section += '<article id="' + this.settings.sectionName + '" class=section " ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+      '<h2 class="heading">Portfolio</h2>' +
+      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>';
+
+    document.getElementById( 'main-content' ).innerHTML += section;
   };
 
   portfolio.populatePortfolio = function() {
-    var innerHTML = '';
+    var portfolioItem = '';
 
     var findImages = function() {
       portfolio.items[prop].images.forEach(function(url) {
@@ -71,7 +73,7 @@
 
       portfolio.items[prop].images = findImages();
 
-      innerHTML +='<li class="portfolio-item section has-shadow">' +
+      portfolioItem += '<li class="portfolio-item section hideme has-shadow">' +
         '<div class="portfolio-item-inner">' +
           '<p>' + portfolio.items[prop].title + '</p>' +
           '<p><a href="' + portfolio.items[prop].link + '">Link</a></p>' +
@@ -81,12 +83,12 @@
       '</li>';
     }
 
-    document.getElementById( 'portfolio-list' ).innerHTML = innerHTML;
+    document.getElementById( 'portfolio-list' ).innerHTML = portfolioItem;
   };
 
   portfolio.slider = function() {
-    var portfolioItems = document.querySelector('#portfolio-list');
-    var portfolioImages = document.querySelectorAll('.portfolio-image-list');
+    var portfolioItems = document.querySelector( '#portfolio-list' );
+    var portfolioImages = document.querySelectorAll(' .portfolio-image-list' );
 
     tinySlider({
       container: portfolioItems,
