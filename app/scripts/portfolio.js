@@ -21,18 +21,18 @@ var portfolio = {
   // Portfolio items
   items: {
     item01: {
-      title: 'First Item title',
-      client: 'First Client',
+      title: 'TDi North website',
+      client: 'TDi North',
       link: 'https://matt3188.github.io/Curriculum-vitae/',
       desc: 'First Description',
-      images: ['images/image01.jpg', 'images/image02.jpg']
+      images: ['images/tdi/tdi-full.jpg', 'images/tdi/tdi4-full.jpg', 'images/tdi/tdi5-full.jpg']
     },
     item02: {
       title: 'Second Item title',
       client: 'Second Client',
       link: 'https://matt3188.github.io/Curriculum-vitae/',
       desc: 'Second Description',
-      images: ['images/image03.jpg', 'images/image04.jpg']
+      images: ['images/tdi/tdi-full.jpg', 'images/tdi/tdi4-full.jpg', 'images/tdi/tdi5-full.jpg']
     }
   }
 };
@@ -53,7 +53,7 @@ portfolio.populatePortfolio = function() {
 
   var findImages = function() {
     portfolio.items[prop].images.forEach(function(url) {
-      images += '<li class="image"><img src="' + url + '" width="100" /></li>';
+      images += '<li class="image"><img src="' + url + '" /></li>';
     });
   };
 
