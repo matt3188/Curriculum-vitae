@@ -3,6 +3,7 @@ var app = {
     trackCtas: true,
     ctaSelector: '.cta',
     ctaBefore: function($button) {
+      'use strict';
       return $button;
     }
   },
@@ -90,3 +91,7 @@ var app = {
     shadow: 'has-shadow'
   }
 };
+(function() {
+  'use strict';
+  return app;
+})();

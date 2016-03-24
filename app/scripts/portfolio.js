@@ -1,6 +1,7 @@
 /**
  * Portfolio
  */
+/* global tinySlider: true */
 
 (function() {
   'use strict';
@@ -13,7 +14,7 @@
     selectors: {
       portfolioList: '.portfolio-list',
       portfolio: '.portfolio',
-      imageList: '.portfolio-image-list',
+      imageList: '.portfolio-image-list'
     },
     class: {
       shadow: 'has-shadow',
@@ -41,7 +42,7 @@
   };
 
   var shadow = portfolio.settings.hasShadow,
-      element = ( ( typeof portfolio.settings.listEl !== "undefined" ) ? portfolio.settings.listEl : 'ul'  );
+      element = ( ( typeof portfolio.settings.listEl !== 'undefined' ) ? portfolio.settings.listEl : 'ul' );
 
   portfolio.init = function() {
     portfolio.setupSection();
@@ -62,11 +63,6 @@
   portfolio.populatePortfolio = function() {
     var portfolioItem = '';
 
-    var findImages = function() {
-      portfolio.items[prop].images.forEach(function(url) {
-        images += '<li class="image"><img src="' + url + '" /></li>';
-      });
-    };
 
     for ( var prop in portfolio.items ) {
       var images = '';
@@ -84,6 +80,12 @@
     }
 
     document.getElementById( 'portfolio-list' ).innerHTML = portfolioItem;
+
+    function findImages() {
+      portfolio.items[prop].images.forEach(function(url) {
+        images += '<li class="image"><img src="' + url + '" /></li>';
+      });
+    }
   };
 
   portfolio.slider = function() {

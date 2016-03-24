@@ -1,4 +1,4 @@
-/* global $: false */
+/* global $: false, app: false */
 
 /**
  * Matt's CV
