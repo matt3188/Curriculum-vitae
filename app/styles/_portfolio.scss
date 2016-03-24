@@ -5,14 +5,55 @@
 .portfolio-item {
   width: 100%;
   clear: none;
+  overflow: hidden;
 
   .portfolio-image-list,
   .portfolio-item-inner {
     width: 100%;
+    overflow: hidden;
 
     @media only screen and (min-width: $mobile-width) {
       width: 50%;
       float: left;
+    }
+  }
+  .portfolio-image-list {
+    max-height: 286px; // TODO: Fix overflow of hidden slide in gallery, possibly due o gallery on hidden slide not being initialised
+  }
+
+  .image {
+    overflow: hidden;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .tiny-slider {
+    position: relative;
+  }
+
+  // Tiny Slider overides
+  .tiny-nav {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+
+    .tiny-next,
+    .tiny-prev {
+      position: relative;
+      border: 2px solid white;
+      padding: 5px;
+      float: left;
+      color: white;
+      @extend .icon;
+    }
+
+    .tiny-prev {
+      @extend .icon-left-open;
+    }
+    .tiny-next {
+      @extend .icon-right-open;
     }
   }
 }
