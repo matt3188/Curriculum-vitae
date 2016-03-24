@@ -77,19 +77,13 @@ portfolio.populatePortfolio = function() {
 
 portfolio.slider = function() {
   var portfolioItems = document.querySelector('#portfolio-list');
-  var responsive = document.querySelectorAll('.portfolio-image-list');
+  var portfolioImages = document.querySelectorAll('.portfolio-image-list');
 
   tinySlider({
     container: portfolioItems,
-    responsive: {
-      480: 1
-    }
   });
   tinySlider({
-    container: responsive,
-    responsive: {
-      480: 1
-    }
+    container: portfolioImages
   });
 };
 
