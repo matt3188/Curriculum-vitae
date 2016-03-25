@@ -2,57 +2,15 @@
  * Portfolio
  */
 #portfolio {
-
-  .tiny-slider {
-    position: relative;
-  }
-  .tiny-dots + .tiny-nav {
-    bottom: 0;
-    right: 0;
-
-    .tiny-next,
-    .tiny-prev {
-      margin: 0;
-    }
-  }
-  .tiny-nav {
-    display: none;
-
-    @media only screen and (min-width: $mobile-width) {
-      display: block;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      z-index: 1;
-
-      .tiny-next,
-      .tiny-prev {
-        @extend .icon;
-        position: relative;
-        border: 2px solid white;
-        padding: 5px 17px 5px 7px;
-        float: left;
-        color: white;
-        background-color: rgba(0,0,0,0.8);
-      }
-      .tiny-prev {
-        @extend .icon-left-open;
-      }
-      .tiny-next {
-        @extend .icon-right-open;
-      }
     }
   }
 }
 .portfolio-item {
   width: 100%;
-  clear: none;
-  overflow: hidden;
 
   .portfolio-image-list,
   .portfolio-item-inner {
     width: 100%;
-    overflow: hidden;
 
     @media only screen and (min-width: $mobile-width) {
       width: 50%;
@@ -60,13 +18,12 @@
     }
   }
   .portfolio-image-list {
-    max-height: 286px; // TODO: Fix overflow of hidden slide in gallery, possibly due o gallery on hidden slide not being initialised
   }
 
   .image {
-    overflow: hidden;
+
     img {
-      max-width: 100%;
+      width: 100%;
     }
   }
 }

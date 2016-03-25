@@ -9,7 +9,7 @@
   var portfolio = {
     settings: {
       sectionName: 'portfolio',
-      hasShadow: false
+      hasShadow: true
     },
     selectors: {
       portfolioList: '.portfolio-list',
@@ -53,9 +53,11 @@
   portfolio.setupSection = function() {
     var section = '';
 
-    section += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
-      '<h2 class="heading">Portfolio</h2>' +
-      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>';
+    section += '<h2 class="heading">Portfolio</h2>' +
+      '<div class="section' + ' ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+      '<article id="' + this.settings.sectionName + '">' +
+      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>'
+    '</article></div>';
 
     document.getElementById( 'main-content' ).innerHTML += section;
   };
@@ -69,7 +71,7 @@
 
       portfolio.items[prop].images = findImages();
 
-      portfolioItem += '<li class="portfolio-item section has-shadow">' +
+      portfolioItem += '<li class="portfolio-item">' +
         '<div class="portfolio-item-inner">' +
           '<p>' + portfolio.items[prop].title + '</p>' +
           '<p><a href="' + portfolio.items[prop].link + '">Link</a></p>' +
