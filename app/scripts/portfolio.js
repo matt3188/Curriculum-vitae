@@ -91,17 +91,8 @@
   portfolio.slider = function() {
     var portfolioItems = document.querySelector( '#portfolio-list' );
     var portfolioImages = document.querySelectorAll(' .portfolio-image-list' );
-
-    tinySlider({
-      container: portfolioItems,
-      navText: ['', ''],
-      touch: false
-    });
-    tinySlider({
-      container: portfolioImages,
-      navText: ['', ''],
-      dots: false
-    });
+    $(' .portfolio-image-list' ).slick();
+    $(' #portfolio-list' ).slick();
   };
 
   return portfolio.init();
