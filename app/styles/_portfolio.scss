@@ -1,58 +1,50 @@
 /**
  * Portfolio
  */
-#portfolio {
 
-  .tiny-slider {
-    position: relative;
+.slick-arrow {
+  width: auto;
+  height: 30px;
+  background-color: black;
+
+  &:before {
+    width: auto;
+    @extend .icon;
   }
-  .tiny-dots + .tiny-nav {
-    bottom: 0;
-    right: 0;
+}
+.slick-prev {
+  left: -42px;
+  &:hover {
+    background-color: rgba(black, 0.8);
+  }
+}
+.slick-next {
+  right: -42px;
+  &:hover {
+    background-color: rgba(black, 0.8);
+  }
+}
 
-    .tiny-next,
-    .tiny-prev {
-      margin: 0;
+.portfolio-list {
+
+  .slick-arrow {
+
+    &.slick-next {
+      @extend .icon-right-open;
     }
-  }
-  .tiny-nav {
-    display: none;
-
-    @media only screen and (min-width: $mobile-width) {
-      display: block;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      z-index: 1;
-
-      .tiny-next,
-      .tiny-prev {
-        @extend .icon;
-        position: relative;
-        border: 2px solid white;
-        padding: 5px 17px 5px 7px;
-        float: left;
-        color: white;
-        background-color: rgba(0,0,0,0.8);
-      }
-      .tiny-prev {
-        @extend .icon-left-open;
-      }
-      .tiny-next {
-        @extend .icon-right-open;
-      }
+    &.slick-prev {
+      @extend .icon-left-open;
     }
   }
 }
+
 .portfolio-item {
+  position: relative;
   width: 100%;
-  clear: none;
-  overflow: hidden;
 
   .portfolio-image-list,
   .portfolio-item-inner {
     width: 100%;
-    overflow: hidden;
 
     @media only screen and (min-width: $mobile-width) {
       width: 50%;
@@ -60,13 +52,28 @@
     }
   }
   .portfolio-image-list {
-    max-height: 286px; // TODO: Fix overflow of hidden slide in gallery, possibly due o gallery on hidden slide not being initialised
+    position: relative;
+
+    .slick-arrow {
+      z-index: 9;
+
+      &:before {
+        color: white;
+        @extend .icon;
+      }
+      &.slick-next {
+        right: 0;
+      }
+      &.slick-prev {
+        left: 0;
+      }
+    }
   }
 
   .image {
-    overflow: hidden;
+
     img {
-      max-width: 100%;
+      width: 100%;
     }
   }
 }
