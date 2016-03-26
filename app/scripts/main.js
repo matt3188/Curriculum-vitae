@@ -141,13 +141,6 @@
     });
   };
 
-  app.menuToogle = function() {
-    $( app.selectors.menuToggle ).on( 'click', function() {
-      $( this ).toggleClass( app.class.open );
-      $( app.selectors.mainMenu ).toggleClass( app.class.visible );
-    });
-  };
-
   app.contactForm = function() {
     $( app.selectors.mainContent ).append('<div class="col-1-2">' +
       '<article id="contact" class="section contact has-shadow hideme">' +
