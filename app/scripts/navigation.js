@@ -19,6 +19,11 @@
 
   var toggle = document.querySelector( navigation.selectors.menuToggle );
   var menu = document.querySelector( navigation.selectors.mainMenu );
+  navigation.init = function() {
+    navigation.clickEvent();
+    navigation.linkClicked();
+  };
+
   navigation.menuToggle = function() {
     toggle.classList.toggle( navigation.class.open );
     menu.classList.toggle( navigation.class.visible );
@@ -30,4 +35,6 @@
       navigation.menuToggle();
     }
   }
+  return navigation.init();
+
 }());
