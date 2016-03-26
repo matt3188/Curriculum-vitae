@@ -18,7 +18,7 @@
     class: {
       shadow: 'has-shadow',
       hide: 'hideme',
-      listClass: 'stacked-list skill-list'
+      listClass: 'skill-list'
     },
     skillSet: {
       'Wordpress': 80,
@@ -42,7 +42,7 @@
 
     section += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : this.class.shadow ) + ' ' + this.class.hide + '">' +
       '<h2 class="heading">' + this.settings.heading + '</h2>' +
-      '<' + element + ' id="skill-list" class="list ' + this.class.listClass + '"></' + element + '>';
+      '<' + element + ' id="skill-list" class="list stacked-list ' + this.class.listClass + '"></' + element + '>';
 
     document.getElementById( 'main-content' ).innerHTML += section;
   };
@@ -50,15 +50,11 @@
   skills.populateskills = function() {
     var skillsSection = '';
 
-    function skillList() {
-      for ( var prop in skills.skillSet ) {
-        skillsSection += '<dt>' + prop + '</dt><dd data-percentage="' + skills.skillSet[prop] + '"></dd>';
-      }
+    for ( var prop in skills.skillSet ) {
+      skillsSection += '<dt>' + prop + '</dt><dd data-percentage="' + skills.skillSet[prop] + '"></dd>';
     }
 
-    skillsSection += skillList();
-
-    document.getElementById( this.settings.sectionName ).innerHTML += skillsSection;
+    document.getElementById( this.class.listClass ).innerHTML += skillsSection;
   };
 
   return skills.init();
