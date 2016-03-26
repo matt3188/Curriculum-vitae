@@ -55,8 +55,6 @@ var app = {
   selectors: {
     mainContent: '.main-content',
     heading: '.heading',
-    menuToggle: '#menu-toggle',
-    mainMenu: '.nav-main',
     mainHero: '.main-hero',
     ctaBanner: '.cta-banner',
     hidden: '.hideme'
