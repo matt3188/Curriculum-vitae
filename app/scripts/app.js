@@ -13,7 +13,6 @@ var app = {
       hasShadow: false
     },
     skills: {
-      // class: 'professional-skills',
       listEl: 'ul',
       listClass: 'stacked-list skill-list'
     },
@@ -31,14 +30,11 @@ var app = {
     info: '.my-info',
     infoList: '.info-list',
     cta: '.cta-banner',
-    // skills: '.professional-skills',
-    // skillsList: '.skill-list',
     experienceList: '.experience-list',
     socialList: '.social-list'
   },
   titles: {
     hero: 'Hero',
-    // skills: 'Professional Skills',
     experience: 'Work Experience',
     contact: 'Please feel free to contact me',
     interests: 'Interests'
@@ -60,13 +56,6 @@ var app = {
     facebook: 'https://www.facebook.com/matt.coleman.562',
     downloadCV: ''
   },
-  // skills: {
-  //   'Wordpress': 80,
-  //   'Javascript': 65,
-  //   'HTML & CSS': 95,
-  //   'Photoshop': 90,
-  //   'Drupal': 45
-  // },
   selectors: {
     mainContent: '.main-content',
     heading: '.heading',
@@ -88,5 +77,7 @@ var app = {
 };
 (function() {
   'use strict';
+
   return app;
+
 })();
