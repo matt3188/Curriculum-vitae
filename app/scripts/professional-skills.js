@@ -50,13 +50,13 @@
   skills.populateskills = function() {
     var skillsSection = '';
 
-    skillsSection += skillList();
-
     function skillList() {
       for ( var prop in skills.skillSet ) {
-        $( skills.selectors.skillsList ).append( '<dt>' + prop + '</dt><dd data-percentage="' + skills.skillSet[prop] + '"></dd>' );
+        skillsSection += '<dt>' + prop + '</dt><dd data-percentage="' + skills.skillSet[prop] + '"></dd>';
       }
     }
+
+    skillsSection += skillList();
 
     document.getElementById( this.settings.sectionName ).innerHTML += skillsSection;
   };

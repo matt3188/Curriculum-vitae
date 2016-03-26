@@ -92,8 +92,9 @@
   portfolio.slider = function() {
     var portfolioItems = document.querySelector( '#portfolio-list' );
     var portfolioImages = document.querySelectorAll(' .portfolio-image-list' );
-    $(' .portfolio-image-list' ).slick();
-    $(' #portfolio-list' ).slick();
+
+    portfolioItems.slick();
+    portfolioImages.slick();
   };
 
   return portfolio.init();
