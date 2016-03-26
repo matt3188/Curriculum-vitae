@@ -5,7 +5,7 @@
 (function() {
   'use strict';
 
-  var professionalSkills = {
+  var skills = {
     settings: {
       sectionName: 'professional-skills',
       heading: 'Professional Skills',
@@ -18,9 +18,9 @@
     class: {
       shadow: 'has-shadow',
       hide: 'hideme',
-      listClass: 'horizontal-list skill-list'
+      listClass: 'stacked-list skill-list'
     },
-    skills: {
+    skillSet: {
       'Wordpress': 80,
       'Javascript': 65,
       'HTML & CSS': 95,
@@ -29,15 +29,15 @@
     }
   };
 
-  var shadow = professionalSkills.settings.hasShadow,
-      element = ( ( typeof professionalSkills.settings.listEl !== 'undefined' ) ? professionalSkills.settings.listEl : 'ul' );
+  var shadow = skills.settings.hasShadow,
+      element = ( ( typeof skills.settings.listEl !== 'undefined' ) ? skills.settings.listEl : 'ul' );
 
-  professionalSkills.init = function() {
-    professionalSkills.setupSection();
-    professionalSkills.populateprofessionalSkills();
+  skills.init = function() {
+    skills.setupSection();
+    skills.populateskills();
   };
 
-  professionalSkills.setupSection = function() {
+  skills.setupSection = function() {
     var section = '';
 
     section += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : this.class.shadow ) + ' ' + this.class.hide + '">' +
@@ -47,22 +47,20 @@
     document.getElementById( 'main-content' ).innerHTML += section;
   };
 
-  professionalSkills.populateprofessionalSkills = function() {
-    var professionalSkillsSection = '';
+  skills.populateskills = function() {
+    var skillsSection = '';
 
-    professionalSkillsSection += skills();
+    skillsSection += skillList();
 
-    function skills() {
-      for ( var prop in app.skills ) {
-        $( app.sections.skillsList ).append( '<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>' );
+    function skillList() {
+      for ( var prop in skills.skillSet ) {
+        $( skills.selectors.skillsList ).append( '<dt>' + prop + '</dt><dd data-percentage="' + skills.skillSet[prop] + '"></dd>' );
       }
     }
 
-
-    document.getElementById( this.settings.sectionName ).innerHTML += professionalSkillsSection;
+    document.getElementById( this.settings.sectionName ).innerHTML += skillsSection;
   };
 
-
-  return professionalSkills.init();
+  return skills.init();
 
 }());
