@@ -1,3 +1,4 @@
+/* global $: false */
 /**
  * Portfolio
  */
@@ -90,11 +91,8 @@
   };
 
   portfolio.slider = function() {
-    var portfolioItems = document.querySelector( '#portfolio-list' );
-    var portfolioImages = document.querySelectorAll(' .portfolio-image-list' );
-
-    portfolioItems.slick();
-    portfolioImages.slick();
+    $(' .portfolio-image-list' ).slick();
+    $(' #portfolio-list' ).slick();
   };
 
   return portfolio.init();
