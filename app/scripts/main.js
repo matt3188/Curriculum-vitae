@@ -18,7 +18,7 @@
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
-    app.populateSkills();
+    // app.populateSkills();
     app.populateExperience();
     app.slideToSection();
     app.menuToogle();
@@ -85,11 +85,11 @@
   };
 
   // Skills section
-  app.populateSkills = function() {
-    for ( var prop in app.skills ) {
-      $( app.sections.skillsList ).append( '<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>' );
-    }
-  };
+  // app.populateSkills = function() {
+  //   for ( var prop in app.skills ) {
+  //     $( app.sections.skillsList ).append( '<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>' );
+  //   }
+  // };
 
   // Social Social links
   app.populateSocialLinks = function() {

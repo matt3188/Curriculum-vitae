@@ -1,7 +1,7 @@
+/* global $: false */
 /**
  * Portfolio
  */
-/* global tinySlider: true */
 
 (function() {
   'use strict';
@@ -56,7 +56,7 @@
     section += '<h2 class="heading">Portfolio</h2>' +
       '<div class="section' + ' ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
       '<article id="' + this.settings.sectionName + '">' +
-      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>'
+      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>' +
     '</article></div>';
 
     document.getElementById( 'main-content' ).innerHTML += section;
@@ -91,8 +91,6 @@
   };
 
   portfolio.slider = function() {
-    var portfolioItems = document.querySelector( '#portfolio-list' );
-    var portfolioImages = document.querySelectorAll(' .portfolio-image-list' );
     $(' .portfolio-image-list' ).slick();
     $(' #portfolio-list' ).slick();
   };
