@@ -35,6 +35,13 @@
       navigation.menuToggle();
     }
   }
+
+  navigation.linkClicked = function() {
+    $( navigation.selectors.menuLink ).on( 'click', function() {
+      navigation.menuToggle();
+    });
+  };
+
   return navigation.init();
 
 }());
