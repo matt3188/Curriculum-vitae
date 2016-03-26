@@ -12,10 +12,6 @@ var app = {
       class: 'cta-banner',
       hasShadow: false
     },
-    skills: {
-      listEl: 'ul',
-      listClass: 'stacked-list skill-list'
-    },
     experience: {
       hasShadow: false,
       class: 'experience',
