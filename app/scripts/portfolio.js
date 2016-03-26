@@ -1,7 +1,6 @@
 /**
  * Portfolio
  */
-/* global tinySlider: true */
 
 (function() {
   'use strict';
