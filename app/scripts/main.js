@@ -21,7 +21,6 @@
     // app.populateSkills();
     app.populateExperience();
     app.slideToSection();
-    app.menuToogle();
     app.addDownloadbtn();
     app.trackCtas();
 
