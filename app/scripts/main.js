@@ -16,11 +16,9 @@
   app.launch = function() {
     app.contactForm();
     app.populateTitles();
-    app.populateHero();
-    app.populateSocialLinks();
+    // app.populateSocialLinks();
     app.populateExperience();
     app.slideToSection();
-    app.addDownloadbtn();
     app.trackCtas();
   };
 
@@ -50,34 +48,6 @@
       $( '[data-heading="' + prop + '"]' ).each(function() {
         $( this ).text( app.titles[prop] );
       });
-    }
-  };
-
-  app.addDownloadbtn = function() {
-    $( app.selectors.ctaBanner ).append( '<button id="downloadCV" href="" class="btn btn-download cta">Download CV</button>' );
-  };
-
-  // Main hero
-  app.populateHero = function() {
-    $( app.sections.info ).prepend(
-      '<span class="speech-bubble">Hello</span>' +
-      '<h1 class="heading main-heading">I\'m <strong>' + app.info.name + '</strong></h1>' +
-      '<h2 class="heading sub-heading">' + app.info.currentJob + '</h2>' +
-      '<hr />'
-    );
-    // Makes more sense to put this in the <dl> list so prepend the
-    // populated list as it lives in a differnet part of the object
-    $( app.sections.infoList ).prepend( '<dt>Age</dt><dd>' + app.info.age + '</dd>' );
-
-    for ( var prop in app.contactInfo ) {
-      $( app.sections.infoList ).append( '<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>' );
-    }
-  };
-
-  // Social Social links
-  app.populateSocialLinks = function() {
-    for ( var prop in app.ctas ) {
-      $( app.sections.socialList ).append( '<li><a id="' + prop + '" class="cta" href="" target="_blank"><i class="icon icon-' + prop + '"></i></a></li>' );
     }
   };
 

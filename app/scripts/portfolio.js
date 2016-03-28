@@ -53,8 +53,8 @@
   portfolio.setupSection = function() {
     var section = '';
 
-    section += '<h2 class="heading">Portfolio</h2>' +
-      '<div class="section' + ' ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+    section += '<div class="section' + ' ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+      '<h2 class="heading">Portfolio</h2>' +
       '<article id="' + this.settings.sectionName + '">' +
       '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>' +
     '</article></div>';

@@ -9,7 +9,7 @@
 
   &:before {
     width: auto;
-    @extend .icon;
+    @extend %icon;
   }
 }
 .slick-prev {
@@ -59,7 +59,7 @@
 
       &:before {
         color: white;
-        @extend .icon;
+        @extend %icon;
       }
       &.slick-next {
         right: 0;
