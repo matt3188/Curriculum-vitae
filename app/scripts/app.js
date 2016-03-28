@@ -64,8 +64,6 @@ var app = {
     hide: 'hideme',
     odd: 'odd',
     even: 'even',
-    open: 'open',
-    visible: 'on-screen',
     shadow: 'has-shadow'
   }
 };
