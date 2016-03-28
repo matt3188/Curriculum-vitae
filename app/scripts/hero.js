@@ -38,9 +38,6 @@
 
   };
 
-  var shadow = hero.settings.hasShadow,
-    element = ( ( typeof hero.settings.listEl !== 'undefined' ) ? hero.settings.listEl : 'ul' );
-
   hero.init = function() {
     hero.populatehero();
     hero.contact();
@@ -60,7 +57,7 @@
     var innerHero = document.getElementsByClassName( hero.selectors.myInfo );
 
     for ( var i = 0, l = innerHero.length; i < l; i++ ) {
-     innerHero[i].innerHTML += heroSection;
+      innerHero[i].innerHTML += heroSection;
     }
 
   };
@@ -70,11 +67,11 @@
 
     cv += '<div class="section centered-text"><button id="downloadCV" href="" class="btn btn-download cta">Download CV</button></div>';
 
-    var element = document.getElementById( hero.selectors.mainHero );
+    var mainHero = document.getElementById( hero.selectors.mainHero );
 
-    element.innerHTML += cv;
+    mainHero.innerHTML += cv;
 
-  }
+  };
 
   hero.contact = function() {
     var contactInfo = '';
@@ -86,7 +83,7 @@
     var infoList = document.getElementsByClassName( hero.class.infoList );
 
     for ( var i = 0, l = infoList.length; i < l; i++ ) {
-     infoList[i].innerHTML += contactInfo;
+      infoList[i].innerHTML += contactInfo;
     }
 
   };
@@ -102,7 +99,7 @@
     var list = document.getElementsByClassName( hero.selectors.socialListClass );
 
     for ( var i = 0, l = list.length; i < l; i++ ) {
-     list[i].innerHTML += socialList;
+      list[i].innerHTML += socialList;
     }
 
 
