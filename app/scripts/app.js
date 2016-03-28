@@ -17,9 +17,6 @@ var app = {
       class: 'experience',
       listEl: 'ul',
       listClass: 'horizontal-list experience-list clearfix'
-    },
-    interests: {
-      class: 'interests'
     }
   },
   sections: {
@@ -32,8 +29,7 @@ var app = {
   titles: {
     hero: 'Hero',
     experience: 'Work Experience',
-    contact: 'Please feel free to contact me',
-    interests: 'Interests'
+    contact: 'Please feel free to contact me'
   },
   info: {
     name: 'Matt Coleman',
