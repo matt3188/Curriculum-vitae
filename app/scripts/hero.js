@@ -30,9 +30,14 @@
     }
 
   };
+
+  var shadow = hero.settings.hasShadow,
+    element = ( ( typeof hero.settings.listEl !== 'undefined' ) ? hero.settings.listEl : 'ul' );
+
   hero.init = function() {
     hero.populatehero();
     hero.contact();
+    hero.addCV();
   };
 
   hero.populatehero = function() {
@@ -51,6 +56,18 @@
     }
 
   };
+
+  hero.addCV = function() {
+    var cv = '';
+
+    cv += '<div class="section centered-text"><button id="downloadCV" href="" class="btn btn-download cta">Download CV</button></div>';
+
+    var element = document.getElementById( hero.selectors.mainHero );
+
+    element.innerHTML += cv;
+
+  }
+
   hero.contact = function() {
     var contactInfo = '';
 
