@@ -21,25 +21,13 @@ var app = {
   },
   sections: {
     info: '.my-info',
-    infoList: '.info-list',
     cta: '.cta-banner',
     experienceList: '.experience-list',
     socialList: '.social-list'
   },
   titles: {
-    hero: 'Hero',
     experience: 'Work Experience',
     contact: 'Please feel free to contact me'
-  },
-  info: {
-    name: 'Matt Coleman',
-    age: 27,
-    currentJob: 'Front-end developer'
-  },
-  contactInfo: {
-    address: '320 Wricklemarsh, SE3 8ES',
-    email: 'hello@matt-coleman.co.uk',
-    phone: '07905 404 858'
   },
   ctas: {
     github: 'https://github.com/matt3188',
