@@ -17,6 +17,10 @@
     position: relative;
     padding: 0;
   }
+
+  &.centered-text {
+    text-align: center
+  }
 }
 
 .has-shadow {
