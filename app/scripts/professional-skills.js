@@ -7,7 +7,7 @@
 
   var skills = {
     settings: {
-      sectionName: 'professional-skills',
+      sectionName: 'skills',
       heading: 'Professional Skills',
       hasShadow: true,
       listEl: 'dl'

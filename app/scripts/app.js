@@ -55,8 +55,6 @@ var app = {
   selectors: {
     mainContent: '.main-content',
     heading: '.heading',
-    menuToggle: '#menu-toggle',
-    mainMenu: '.nav-main',
     mainHero: '.main-hero',
     ctaBanner: '.cta-banner',
     hidden: '.hideme'
@@ -66,8 +64,6 @@ var app = {
     hide: 'hideme',
     odd: 'odd',
     even: 'even',
-    open: 'open',
-    visible: 'on-screen',
     shadow: 'has-shadow'
   }
 };

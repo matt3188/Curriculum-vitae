@@ -18,10 +18,8 @@
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
-    // app.populateSkills();
     app.populateExperience();
     app.slideToSection();
-    app.menuToogle();
     app.addDownloadbtn();
     app.trackCtas();
 
@@ -138,13 +136,6 @@
           return false;
         }
       }
-    });
-  };
-
-  app.menuToogle = function() {
-    $( app.selectors.menuToggle ).on( 'click', function() {
-      $( this ).toggleClass( app.class.open );
-      $( app.selectors.mainMenu ).toggleClass( app.class.visible );
     });
   };
 

@@ -4,11 +4,12 @@
 
 .navigation {
   @media all and (max-width: $mobile-width) {
-    position: absolute;
+    position: fixed;
     height: 100%;
     top: 0;
     bottom: 0;
     margin: auto;
+    z-index: 99;
   }
 
 }
