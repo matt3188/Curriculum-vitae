@@ -18,7 +18,6 @@
     app.populateTitles();
     app.populateHero();
     app.populateSocialLinks();
-    // app.populateSkills();
     app.populateExperience();
     app.slideToSection();
     app.addDownloadbtn();
