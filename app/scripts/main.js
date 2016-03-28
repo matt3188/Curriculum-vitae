@@ -22,8 +22,6 @@
     app.slideToSection();
     app.addDownloadbtn();
     app.trackCtas();
-
-    app.animateIn();
   };
 
   // Creates section skeleton in which to populate with content
@@ -39,12 +37,6 @@
       );
     }
     callback();
-  };
-
-  app.animateIn = function() {
-    setTimeout(function() {
-      $( app.selectors.mainHero ).addClass( app.class.show );
-    }, 1000);
   };
 
   // Titles
@@ -81,13 +73,6 @@
       $( app.sections.infoList ).append( '<dt>' + prop + '</dt><dd>' + app.contactInfo[prop] + '</dd>' );
     }
   };
-
-  // Skills section
-  // app.populateSkills = function() {
-  //   for ( var prop in app.skills ) {
-  //     $( app.sections.skillsList ).append( '<dt>' + prop + '</dt><dd data-percentage="' + app.skills[prop] + '"></dd>' );
-  //   }
-  // };
 
   // Social Social links
   app.populateSocialLinks = function() {
@@ -181,18 +166,6 @@
       app.config.ctaBefore( $button );
     });
   };
-
-  $( window ).scroll(function() {
-    // Check the location of each element
-    $( app.selectors.hidden ).each(function() {
-      var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
-      var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
-      // If the object is completely visible in the window, add the 'showme' class
-      if ( bottomOfWindow > bottomofObject ) {
-        $( this ).addClass( app.class.show );
-      }
-    });
-  });
 
   return app.init();
 
