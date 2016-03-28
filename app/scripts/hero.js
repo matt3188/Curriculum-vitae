@@ -30,7 +30,28 @@
     }
 
   };
+  hero.init = function() {
+    hero.populatehero();
   };
 
+  hero.populatehero = function() {
+    var heroSection = '';
+
+    heroSection += '<span class="speech-bubble">Hello</span>' +
+      '<h1 class="heading main-heading">I\'m <strong>Matt Coleman</strong></h1>' +
+      '<h2 class="heading sub-heading">' + hero.info.currentJob + '</h2>' +
+      '<hr />' +
+      '<dl class="list dl-list info-list"></dl>';
+
+    var innerHero = document.getElementsByClassName( hero.selectors.myInfo );
+
+    for ( var i = 0, l = innerHero.length; i < l; i++ ) {
+     innerHero[i].innerHTML += heroSection;
+    }
+
+  };
+  };
+
+  return hero.init();
 
 }());
