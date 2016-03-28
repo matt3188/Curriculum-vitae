@@ -16,7 +16,7 @@
   app.launch = function() {
     app.contactForm();
     app.populateTitles();
-    app.populateSocialLinks();
+    // app.populateSocialLinks();
     app.populateExperience();
     app.slideToSection();
     app.trackCtas();
@@ -48,13 +48,6 @@
       $( '[data-heading="' + prop + '"]' ).each(function() {
         $( this ).text( app.titles[prop] );
       });
-    }
-  };
-
-  // Social Social links
-  app.populateSocialLinks = function() {
-    for ( var prop in app.ctas ) {
-      $( app.sections.socialList ).append( '<li><a id="' + prop + '" class="cta" href="" target="_blank"><i class="icon icon-' + prop + '"></i></a></li>' );
     }
   };
 

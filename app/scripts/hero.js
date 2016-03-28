@@ -12,7 +12,7 @@
     },
     selectors: {
       contactList: '.info-list',
-      socialListClass: '.social-list',
+      socialListClass: 'social-list',
       myInfo: 'my-info',
       mainHero: 'hero'
     },
@@ -27,6 +27,13 @@
       address: '320 Wricklemarsh, SE3 8ES',
       email: 'hello@matt-coleman.co.uk',
       phone: '07905 404 858'
+    },
+    ctas: {
+      github: 'https://github.com/matt3188',
+      linkedin: 'https://uk.linkedin.com/in/matt-coleman-a178783a',
+      twitter: 'https://twitter.com/Matt__Coleman',
+      facebook: 'https://www.facebook.com/matt.coleman.562',
+      downloadCV: ''
     }
 
   };
@@ -37,6 +44,7 @@
   hero.init = function() {
     hero.populatehero();
     hero.contact();
+    hero.populateSocialLinks();
     hero.addCV();
   };
 
@@ -80,6 +88,23 @@
     for ( var i = 0, l = infoList.length; i < l; i++ ) {
      infoList[i].innerHTML += contactInfo;
     }
+
+  };
+
+  // Social Social links
+  hero.populateSocialLinks = function() {
+    var socialList = '';
+
+    for ( var prop in hero.ctas ) {
+      socialList += '<li><a id="' + prop + '" class="cta" href="" target="_blank"><i class="icon icon-' + prop + '"></i></a></li>';
+    }
+
+    var list = document.getElementsByClassName( hero.selectors.socialListClass );
+
+    for ( var i = 0, l = list.length; i < l; i++ ) {
+     list[i].innerHTML += socialList;
+    }
+
 
   };
 

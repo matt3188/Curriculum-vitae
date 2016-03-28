@@ -29,13 +29,6 @@ var app = {
     experience: 'Work Experience',
     contact: 'Please feel free to contact me'
   },
-  ctas: {
-    github: 'https://github.com/matt3188',
-    linkedin: 'https://uk.linkedin.com/in/matt-coleman-a178783a',
-    twitter: 'https://twitter.com/Matt__Coleman',
-    facebook: 'https://www.facebook.com/matt.coleman.562',
-    downloadCV: ''
-  },
   selectors: {
     mainContent: '.main-content',
     heading: '.heading',
