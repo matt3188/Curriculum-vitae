@@ -32,6 +32,7 @@
   };
   hero.init = function() {
     hero.populatehero();
+    hero.contact();
   };
 
   hero.populatehero = function() {
@@ -50,6 +51,19 @@
     }
 
   };
+  hero.contact = function() {
+    var contactInfo = '';
+
+    for ( var prop in hero.info ) {
+      contactInfo += '<dt>' + prop + '</dt><dd>' + hero.info[prop] + '</dd>';
+    }
+
+    var infoList = document.getElementsByClassName( hero.class.infoList );
+
+    for ( var i = 0, l = infoList.length; i < l; i++ ) {
+     infoList[i].innerHTML += contactInfo;
+    }
+
   };
 
   return hero.init();
