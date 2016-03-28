@@ -22,8 +22,6 @@
     app.slideToSection();
     app.addDownloadbtn();
     app.trackCtas();
-
-    app.animateIn();
   };
 
   // Creates section skeleton in which to populate with content
@@ -39,12 +37,6 @@
       );
     }
     callback();
-  };
-
-  app.animateIn = function() {
-    setTimeout(function() {
-      $( app.selectors.mainHero ).addClass( app.class.show );
-    }, 1000);
   };
 
   // Titles
@@ -174,18 +166,6 @@
       app.config.ctaBefore( $button );
     });
   };
-
-  $( window ).scroll(function() {
-    // Check the location of each element
-    $( app.selectors.hidden ).each(function() {
-      var bottomofObject = $( this ).offset().top + $( this ).outerHeight();
-      var bottomOfWindow = $( window ).scrollTop() + $( window ).height();
-      // If the object is completely visible in the window, add the 'showme' class
-      if ( bottomOfWindow > bottomofObject ) {
-        $( this ).addClass( app.class.show );
-      }
-    });
-  });
 
   return app.init();
 

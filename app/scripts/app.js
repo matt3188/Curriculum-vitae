@@ -51,7 +51,6 @@ var app = {
   selectors: {
     mainContent: '.main-content',
     heading: '.heading',
-    mainHero: '.main-hero',
     ctaBanner: '.cta-banner',
     hidden: '.hideme'
   },
