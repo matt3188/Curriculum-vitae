@@ -55,8 +55,6 @@ var app = {
     hidden: '.hideme'
   },
   class: {
-    show: 'showme',
-    hide: 'hideme',
     odd: 'odd',
     even: 'even',
     shadow: 'has-shadow'

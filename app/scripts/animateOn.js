@@ -1,3 +1,5 @@
+/* global $: false */
+
 /**
  * Animate on
  */
@@ -34,7 +36,7 @@
 
   animateOn.intro = function() {
     setTimeout(function() {
-      $( animateOn.selectors.mainHero ).addClass( app.class.show );
+      $( animateOn.selectors.mainHero ).addClass( animateOn.class.show );
     }, 1000);
   };
 
