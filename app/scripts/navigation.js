@@ -1,3 +1,5 @@
+/* global $: false */
+
 /**
  * Navigation
  */
@@ -19,6 +21,7 @@
 
   var toggle = document.querySelector( navigation.selectors.menuToggle );
   var menu = document.querySelector( navigation.selectors.mainMenu );
+
   navigation.init = function() {
     navigation.clickEvent();
     navigation.linkClicked();
@@ -33,8 +36,8 @@
     toggle.onclick = function(event) {
       event.preventDefault();
       navigation.menuToggle();
-    }
-  }
+    };
+  };
 
   navigation.linkClicked = function() {
     $( navigation.selectors.menuLink ).on( 'click', function() {
