@@ -33,7 +33,7 @@
   };
 
   navigation.clickEvent = function() {
-    toggle.onclick = function(event) {
+    toggle.onclick = function( event ) {
       event.preventDefault();
       navigation.menuToggle();
     };
