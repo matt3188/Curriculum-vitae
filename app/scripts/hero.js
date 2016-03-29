@@ -65,7 +65,7 @@
   hero.addCV = function() {
     var cv = '';
 
-    cv += '<div class="section centered-text"><button id="downloadCV" href="" class="btn btn-download cta">Download CV</button></div>';
+    cv += '<div class="section centered-text hideme"><button id="downloadCV" href="" class="btn btn-download cta">Download CV</button></div>';
 
     var mainHero = document.getElementById( hero.selectors.mainHero );
 

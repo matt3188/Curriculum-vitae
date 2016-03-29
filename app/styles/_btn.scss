@@ -11,5 +11,10 @@
     text-transform: uppercase;
     font-weight: bold;
     padding: 15px 30px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #FFF;
+    }
   }
 }
