@@ -51,15 +51,15 @@
   };
 
   portfolio.setupSection = function() {
-    var section = '';
+    var portfolioSection = '';
 
-    section += '<div class="section' + ' ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
+    portfolioSection += '<div class="section' + ' ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : portfolio.class.shadow ) + ' ' + portfolio.class.hide + '">' +
       '<h2 class="heading">Portfolio</h2>' +
       '<article id="' + this.settings.sectionName + '">' +
-      '<' + element + ' id="portfolio-list" class="list ' + portfolio.class.listClass + '"></' + element + '>' +
+      '<' + element + ' id="portfolio-list" class="list ' + this.class.listClass + '"></' + element + '>' +
     '</article></div>';
 
-    document.getElementById( 'main-content' ).innerHTML += section;
+    document.getElementById( 'main-content' ).innerHTML += portfolioSection;
   };
 
   portfolio.populatePortfolio = function() {
