@@ -11,14 +11,14 @@
     background-color: rgba($primary-green, 0.2);
     display: block;
     position: absolute;
-    top: 20%;
+    top: 118px;
     left: 0;
     bottom: 25%;
     right: 0;
     margin: auto;
     z-index: -1;
     @media only screen and (min-width: $mobile-width) {
-      bottom: 35%;
+      bottom: 36%;
     }
   }
 }
@@ -72,11 +72,11 @@
     .experience-item-inner {
 
       &:after {
-        top: 13%;
+        top: 54px;
         right: -37.5px;
       }
       &:before {
-        top: 25%;
+        top: 72px;
         left: 100%;
         transform: rotate(-135deg);
       }
@@ -92,7 +92,7 @@
 
     .experience-item-inner {
       &:after {
-        top: 43%;
+        top: 131px;
         left: -37.5px;
       }
       &:before {

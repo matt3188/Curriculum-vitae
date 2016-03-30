@@ -28,12 +28,12 @@
   };
 
   intro.setupSection = function() {
-    var section = '';
+    var introSection = '';
 
-    section += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : this.class.shadow ) + ' ' + this.class.hide + '">' +
+    introSection += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : this.class.shadow ) + ' ' + this.class.hide + '">' +
       '<h2 class="heading">Intro</h2>';
 
-    document.getElementById( 'main-content' ).innerHTML += section;
+    document.getElementById( 'main-content' ).innerHTML += introSection;
   };
 
   intro.populateIntro = function() {

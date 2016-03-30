@@ -8,33 +8,14 @@
   'use strict';
 
   app.init = function init() {
-    app.createSections(function() {
-      app.launch();
-    });
+    app.launch();
   };
 
   app.launch = function() {
     app.contactForm();
     app.populateTitles();
-    // app.populateSocialLinks();
-    app.populateExperience();
     app.slideToSection();
     app.trackCtas();
-  };
-
-  // Creates section skeleton in which to populate with content
-  app.createSections = function( callback ) {
-    for ( var prop in app.mainSections ) {
-
-      var shadow = app.mainSections[prop].hasShadow;
-
-      $( app.selectors.mainContent ).append(
-        '<article id="' + prop + '" class="section ' + app.mainSections[prop].class + ' ' + ( ( shadow === false ) ? '' : app.class.shadow ) + ' ' + app.class.hide + '">' +
-        '<h2 class="heading" data-heading="' + prop + '"></h2>' +
-        '<' + app.mainSections[prop].listEl + ' class="list ' + app.mainSections[prop].listClass + '"></' + app.mainSections[prop].el + '>'
-      );
-    }
-    callback();
   };
 
   // Titles
@@ -48,34 +29,6 @@
       $( '[data-heading="' + prop + '"]' ).each(function() {
         $( this ).text( app.titles[prop] );
       });
-    }
-  };
-
-  app.populateExperience = function() {
-    // Setup Job instance
-    function Job( company, startDate, endDate, role, content ) {
-      this.company = company;
-      this.startDate = startDate;
-      this.endDate = endDate;
-      this.role = role;
-      this.content = content;
-
-      this.toString = function() {
-        return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.endDate + '</span></time>' +
-          '<h3 class="heading">' + this.company + '</h3>' +
-          '<p class="role">' + this.role + '</p>' +
-          '<p class="content">' + this.content + '</p>';
-      };
-    }
-
-    var jobs = {
-      popcorn: new Job( 'Popcorn', 'February 2012', 'August 2014', 'Customer service manager/ Web Developer', 'Lorem ipsum' ),
-      adnostic: new Job( 'Adnostic', 'August 2014', 'August 2015', 'Digital Designer', 'Lorem ipsum' ),
-      dennisDigital: new Job( 'Dennis Digital', 'August 2015', 'Present', 'Front end developer', 'Lorem ipsum' )
-    };
-
-    for ( var prop in jobs ) {
-      $( app.sections.experienceList ).append( '<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>' );
     }
   };
 
