@@ -65,7 +65,6 @@
   portfolio.populatePortfolio = function() {
     var portfolioItem = '';
 
-
     for ( var prop in portfolio.items ) {
       var images = '';
 

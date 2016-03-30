@@ -70,7 +70,6 @@
     var mainHero = document.getElementById( hero.selectors.mainHero );
 
     mainHero.innerHTML += cv;
-
   };
 
   hero.contact = function() {
@@ -85,7 +84,6 @@
     for ( var i = 0, l = infoList.length; i < l; i++ ) {
       infoList[i].innerHTML += contactInfo;
     }
-
   };
 
   // Social Social links
@@ -101,8 +99,6 @@
     for ( var i = 0, l = list.length; i < l; i++ ) {
       list[i].innerHTML += socialList;
     }
-
-
   };
 
   return hero.init();
