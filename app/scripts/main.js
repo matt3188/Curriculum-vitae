@@ -17,7 +17,7 @@
     app.contactForm();
     app.populateTitles();
     // app.populateSocialLinks();
-    app.populateExperience();
+    // app.populateExperience();
     app.slideToSection();
     app.trackCtas();
   };
@@ -51,33 +51,33 @@
     }
   };
 
-  app.populateExperience = function() {
-    // Setup Job instance
-    function Job( company, startDate, endDate, role, content ) {
-      this.company = company;
-      this.startDate = startDate;
-      this.endDate = endDate;
-      this.role = role;
-      this.content = content;
+  // app.populateExperience = function() {
+  //   // Setup Job instance
+  //   function Job( company, startDate, endDate, role, content ) {
+  //     this.company = company;
+  //     this.startDate = startDate;
+  //     this.endDate = endDate;
+  //     this.role = role;
+  //     this.content = content;
 
-      this.toString = function() {
-        return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.endDate + '</span></time>' +
-          '<h3 class="heading">' + this.company + '</h3>' +
-          '<p class="role">' + this.role + '</p>' +
-          '<p class="content">' + this.content + '</p>';
-      };
-    }
+  //     this.toString = function() {
+  //       return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.endDate + '</span></time>' +
+  //         '<h3 class="heading">' + this.company + '</h3>' +
+  //         '<p class="role">' + this.role + '</p>' +
+  //         '<p class="content">' + this.content + '</p>';
+  //     };
+  //   }
 
-    var jobs = {
-      popcorn: new Job( 'Popcorn', 'February 2012', 'August 2014', 'Customer service manager/ Web Developer', 'Lorem ipsum' ),
-      adnostic: new Job( 'Adnostic', 'August 2014', 'August 2015', 'Digital Designer', 'Lorem ipsum' ),
-      dennisDigital: new Job( 'Dennis Digital', 'August 2015', 'Present', 'Front end developer', 'Lorem ipsum' )
-    };
+  //   var jobs = {
+  //     popcorn: new Job( 'Popcorn', 'February 2012', 'August 2014', 'Customer service manager/ Web Developer', 'Lorem ipsum' ),
+  //     adnostic: new Job( 'Adnostic', 'August 2014', 'August 2015', 'Digital Designer', 'Lorem ipsum' ),
+  //     dennisDigital: new Job( 'Dennis Digital', 'August 2015', 'Present', 'Front end developer', 'Lorem ipsum' )
+  //   };
 
-    for ( var prop in jobs ) {
-      $( app.sections.experienceList ).append( '<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>' );
-    }
-  };
+  //   for ( var prop in jobs ) {
+  //     $( app.sections.experienceList ).append( '<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>' );
+  //   }
+  // };
 
   app.slideToSection = function() {
     $( 'a[href*="#"]:not([href="#"])' ).click(function() {
