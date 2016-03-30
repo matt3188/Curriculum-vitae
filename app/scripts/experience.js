@@ -1,3 +1,5 @@
+/* global app: false */
+
 /**
  * Main Hero
  */
