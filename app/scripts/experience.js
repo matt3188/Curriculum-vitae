@@ -18,6 +18,10 @@
     }
   };
 
+  var shadow = experience.settings.hasShadow,
+    element = ( ( typeof experience.settings.listEl !== 'undefined' ) ? experience.settings.listEl : 'ul' );
+
+
   experience.init = function() {
     this.setupSection();
   experience.setupSection = function() {
