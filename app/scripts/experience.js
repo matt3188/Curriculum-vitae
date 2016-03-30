@@ -28,13 +28,13 @@
   };
 
   experience.setupSection = function() {
-    var section = '';
+    var experienceSection = '';
 
-    section += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : app.class.shadow ) + ' ' + app.class.hide + '">' +
+    experienceSection += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : app.class.shadow ) + ' ' + app.class.hide + '">' +
       '<h2 class="heading">Work Experience</h2>' +
       '<' + element + ' class="list ' + experience.settings.listClass + '"></' + element + '>';
 
-    document.getElementById( 'main-content' ).innerHTML += section;
+    document.getElementById( 'main-content' ).innerHTML += experienceSection;
   };
 
   experience.setupJob = function() {
