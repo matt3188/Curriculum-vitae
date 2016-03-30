@@ -18,6 +18,17 @@
     }
   };
 
-  experience.init = function() {};
+  experience.init = function() {
+    this.setupSection();
+  experience.setupSection = function() {
+    var section = '';
+
+    section += '<article id="' + this.settings.sectionName + '" class="section hideme ' + this.settings.sectionName + ' ' + ( ( shadow === false ) ? '' : app.class.shadow ) + ' ' + app.class.hide + '">' +
+      '<h2 class="heading">Work Experience</h2>' +
+      '<' + element + ' class="list ' + experience.settings.listClass + '"></' + element + '>';
+
+    document.getElementById( 'main-content' ).innerHTML += section;
+  };
+  return experience.init();
 
 }());
