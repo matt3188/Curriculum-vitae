@@ -24,6 +24,9 @@
 
   experience.init = function() {
     this.setupSection();
+    this.setupJob();
+  };
+
   experience.setupSection = function() {
     var section = '';
 
@@ -33,6 +36,40 @@
 
     document.getElementById( 'main-content' ).innerHTML += section;
   };
+
+  experience.setupJob = function() {
+
+    function Job( company, startDate, endDate, role, content ) {
+      this.company = company;
+      this.startDate = startDate;
+      this.endDate = endDate;
+      this.role = role;
+      this.content = content;
+
+      this.toString = function() {
+        return '<time><span class="date-start">' + this.startDate + '</span> - <span class="date-finish">' + this.endDate + '</span></time>' +
+          '<h3 class="heading heading-employer">' + this.company + '</h3>' +
+          '<p class="role">' + this.role + '</p>' +
+          '<p class="content">' + this.content + '</p>';
+      };
+    }
+    var jobs = {
+    };
+
+    var jobList = '';
+
+    for ( var prop in jobs ) {
+      jobList += '<li class="col-1-2 experience-item"><div class="section experience-item-inner">' + jobs[prop].toString() + '</div></li>';
+    }
+
+    var jobListEl = document.getElementsByClassName( experience.selectors.jobListClass );
+
+    for ( var i = 0, j = jobListEl.length; i < j; i++ ) {
+      jobListEl[i].innerHTML += jobList;
+    }
+
+  };
+
   return experience.init();
 
 }());
