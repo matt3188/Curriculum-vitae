@@ -46,6 +46,12 @@
         desc: 'This site was an absoulte pleasure to design and build, I couldn\'t of asked for a nicer client. All done with HTML and CSS with a separate stylesheet for browser that do not support CSS3. Even a bit of jQuery easing chucked in there for good measure.',
         images: [ 'images/mbk/mbk-full.jpg', 'images/mbk/mbk2-full.jpg', 'images/mbk/mbk3-full.jpg', 'images/mbk/mbk4-full.jpg', 'images/mbk/mbk5-full.jpg' ]
       },
+      item04: {
+        title: 'My First Dance',
+        client: 'Candace Scott',
+        link: 'http://www.myfirstdance.co.uk/',
+        desc: 'Helping people with their first dance on their special day. This site features a bespoke CMS system with an image up-loader and editor enabling the client to crop the images how they like.',
+        images: [ 'images/mfd/mfd-full.jpg', 'images/mfd/mfd2-full.jpg', 'images/mfd/mfd3-full.jpg' ]
       }
     }
   };
