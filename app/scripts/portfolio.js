@@ -32,18 +32,13 @@
         desc: 'I wanted to learn more about Javascript and what better way to learn than to build something you are going to find fun. It\'s basically my interpretation of the popular memory game pairs. Still a working progress, but you get the idea.',
         images: [ 'images/flipcard/flipcard-full.jpg', 'images/flipcard/flipcard-1.jpg', 'images/flipcard/flipcard-2.jpg' ]
       },
+      item02: {
         title: 'TDi North website',
         client: 'TDi North',
-        link: 'https://matt3188.github.io/Curriculum-vitae/',
-        desc: 'First Description',
-        images: ['images/tdi/tdi-full.jpg', 'images/tdi/tdi4-full.jpg', 'images/tdi/tdi5-full.jpg']
+        link: 'http://www.tdi-north.com/',
+        desc: 'These guys are a Japanese vehicle tuning specialists for Honda Type-R\'s, S2000\'s, Nissan Skylines, GTR\'s, 350Z and 370Z\'s. Built using HTML and CSS. jQuery used for the home page banners and features a content managed gallery.',
+        images: [ 'images/tdi/tdi-full.jpg', 'images/tdi/tdi4-full.jpg', 'images/tdi/tdi5-full.jpg' ]
       },
-      item02: {
-        title: 'Second Item title',
-        client: 'Second Client',
-        link: 'https://matt3188.github.io/Curriculum-vitae/',
-        desc: 'Second Description',
-        images: ['images/tdi/tdi-full.jpg', 'images/tdi/tdi4-full.jpg', 'images/tdi/tdi5-full.jpg']
       }
     }
   };
