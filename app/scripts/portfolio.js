@@ -26,6 +26,12 @@
     // Portfolio items
     items: {
       item01: {
+        title: 'flipCard',
+        client: 'Personal project',
+        link: 'http://matt3188.github.io/flipCard/',
+        desc: 'I wanted to learn more about Javascript and what better way to learn than to build something you are going to find fun. It\'s basically my interpretation of the popular memory game pairs. Still a working progress, but you get the idea.',
+        images: [ 'images/flipcard/flipcard-full.jpg', 'images/flipcard/flipcard-1.jpg', 'images/flipcard/flipcard-2.jpg' ]
+      },
         title: 'TDi North website',
         client: 'TDi North',
         link: 'https://matt3188.github.io/Curriculum-vitae/',
