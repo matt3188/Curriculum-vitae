@@ -20,6 +20,7 @@
       shadow: 'has-shadow',
       hide: 'hideme',
       listClass: 'horizontal-list portfolio-list',
+      linkClass: 'btn btn-link',
       imageListClass: 'horizontal-list portfolio-image-list'
     },
     // Portfolio items
@@ -72,9 +73,9 @@
 
       portfolioItem += '<li class="portfolio-item">' +
         '<div class="portfolio-item-inner">' +
-          '<p>' + portfolio.items[prop].title + '</p>' +
-          '<p><a href="' + portfolio.items[prop].link + '">Link</a></p>' +
+          '<h2>' + portfolio.items[prop].title + '</h2>' +
           '<p>' + portfolio.items[prop].desc + '</p>' +
+          '<a href="' + portfolio.items[prop].link + ' target="_blank" class="list ' + this.class.linkClass + '">View website</a>' +
         '</div>' +
         '<ul class="list horizontal-list portfolio-image-list">' + images + '</ul>' +
       '</li>';
