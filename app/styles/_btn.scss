@@ -3,6 +3,7 @@
  */
 
 .btn {
+  transition: background-color 0.3s;
 
   &.btn-download {
     display: inline-block;
@@ -11,10 +12,22 @@
     text-transform: uppercase;
     font-weight: bold;
     padding: 15px 30px;
-    transition: background-color 0.3s;
 
     &:hover {
       background-color: #FFF;
+    }
+  }
+
+  &.btn-link {
+    color: #FFF;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 4px;
+    background-color: $primary-green;
+
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($primary-green, 3);
     }
   }
 }
