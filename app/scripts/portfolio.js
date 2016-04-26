@@ -89,7 +89,7 @@
         '<div class="portfolio-item-inner">' +
           '<h2>' + portfolio.items[prop].title + '</h2>' +
           '<p>' + portfolio.items[prop].desc + '</p>' +
-          '<a href="' + portfolio.items[prop].link + ' target="_blank" class="list ' + this.class.linkClass + '">View website</a>' +
+          '<a href="' + portfolio.items[prop].link + '" target="_blank" class="list ' + this.class.linkClass + '">View website</a>' +
         '</div>' +
         '<ul class="list horizontal-list portfolio-image-list">' + images + '</ul>' +
       '</li>';
