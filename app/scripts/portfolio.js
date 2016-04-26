@@ -60,6 +60,12 @@
         desc: 'I was approached by a previous client of mine to help the company they worked for with a new website. A builders firm based in Bishop\'s Stortford who specialise in all aspects of residential and commercial works',
         images: [ 'images/novo/novo-full.jpg', 'images/novo/novo2-full.jpg', 'images/novo/novo3-full.jpg' ]
       },
+      item06: {
+        title: 'Anthony Berry Recruitment',
+        client: 'Anthony Berry',
+        link: 'http://www.antonyberryassociates.com/',
+        desc: 'I was approached by a previous client of mine to help the company they worked for with a new website. A builders firm based in Bishop\'s Stortford who specialise in all aspects of residential and commercial works',
+        images: [ 'images/berry/berry-full.jpg', 'images/berry/berry2-full.jpg', 'images/berry/berry3-full.jpg' ]
       }
     }
   };
