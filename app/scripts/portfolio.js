@@ -39,6 +39,13 @@
         desc: 'These guys are a Japanese vehicle tuning specialists for Honda Type-R\'s, S2000\'s, Nissan Skylines, GTR\'s, 350Z and 370Z\'s. Built using HTML and CSS. jQuery used for the home page banners and features a content managed gallery.',
         images: [ 'images/tdi/tdi-full.jpg', 'images/tdi/tdi4-full.jpg', 'images/tdi/tdi5-full.jpg' ]
       },
+      item03: {
+        title: 'Makeup by Kayleigh',
+        client: 'Kayleigh Rowett',
+        link: 'http://makeupbykayleigh.com/',
+        desc: 'This site was an absoulte pleasure to design and build, I couldn\'t of asked for a nicer client. All done with HTML and CSS with a separate stylesheet for browser that do not support CSS3. Even a bit of jQuery easing chucked in there for good measure.',
+        images: [ 'images/mbk/mbk-full.jpg', 'images/mbk/mbk2-full.jpg', 'images/mbk/mbk3-full.jpg', 'images/mbk/mbk4-full.jpg', 'images/mbk/mbk5-full.jpg' ]
+      },
       }
     }
   };
