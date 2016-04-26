@@ -52,6 +52,14 @@
         link: 'http://www.myfirstdance.co.uk/',
         desc: 'Helping people with their first dance on their special day. This site features a bespoke CMS system with an image up-loader and editor enabling the client to crop the images how they like.',
         images: [ 'images/mfd/mfd-full.jpg', 'images/mfd/mfd2-full.jpg', 'images/mfd/mfd3-full.jpg' ]
+      },
+      item05: {
+        title: 'Novo Construction',
+        client: 'Novo Construction',
+        link: 'http://novoconstruction.co.uk/',
+        desc: 'I was approached by a previous client of mine to help the company they worked for with a new website. A builders firm based in Bishop\'s Stortford who specialise in all aspects of residential and commercial works',
+        images: [ 'images/novo/novo-full.jpg', 'images/novo/novo2-full.jpg', 'images/novo/novo3-full.jpg' ]
+      },
       }
     }
   };
