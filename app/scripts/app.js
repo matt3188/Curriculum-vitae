@@ -7,26 +7,7 @@ var app = {
       return $button;
     }
   },
-  // mainSections: {
-    // cta: {
-    //   class: 'cta-banner',
-    //   hasShadow: false
-    // },
-    // experience: {
-    //   hasShadow: false,
-    //   class: 'experience',
-    //   listEl: 'ul',
-    //   listClass: 'horizontal-list experience-list clearfix'
-    // }
-  // },
-  // sections: {
-    // info: '.my-info',
-    // cta: '.cta-banner',
-    // experienceList: '.experience-list',
-    // socialList: '.social-list'
-  // },
   titles: {
-    // experience: 'Work Experience',
     contact: 'Please feel free to contact me'
   },
   selectors: {
