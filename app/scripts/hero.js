@@ -25,7 +25,7 @@
     info: {
       age: age,
       currentJob: 'Front-end developer',
-      address: '320 Wricklemarsh, SE3 8ES',
+      address: '320 Wricklemarsh Road, SE3 8ES',
       email: 'hello@matt-coleman.co.uk',
       phone: '07905 404 858'
     },
