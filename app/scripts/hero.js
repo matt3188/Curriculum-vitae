@@ -101,9 +101,8 @@
   // Social Social links
   hero.populateSocialLinks = function() {
     var socialList = '';
-
     for ( var prop in hero.ctas ) {
-      socialList += '<li><a id="' + prop + '" class="cta" href="" target="_blank"><i class="icon icon-' + prop + '"></i></a></li>';
+      socialList += '<li><a id="' + prop + '" class="cta" href="' + hero.ctas[prop] + '" target="_blank"><i class="icon icon-' + prop + '"></i></a></li>';
     }
 
     var list = document.getElementsByClassName( hero.selectors.socialListClass );
