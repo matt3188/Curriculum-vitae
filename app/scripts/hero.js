@@ -5,6 +5,7 @@
 (function() {
   'use strict';
 
+  var age = getAge('07/31/1988');
   var hero = {
     settings: {
       hasShadow: true,
@@ -22,7 +23,7 @@
       infoList: 'info-list'
     },
     info: {
-      age: 27,
+      age: age,
       currentJob: 'Front-end developer',
       address: '320 Wricklemarsh, SE3 8ES',
       email: 'hello@matt-coleman.co.uk',
@@ -36,6 +37,17 @@
       downloadCV: ''
     }
 
+  };
+
+  function getAge( dateString ) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
   };
 
   hero.init = function() {
