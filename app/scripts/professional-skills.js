@@ -21,10 +21,10 @@
       listClass: 'skill-list'
     },
     skillSet: {
-      'Wordpress': 80,
-      'Javascript': 65,
       'HTML & CSS': 95,
+      'Javascript': 75,
       'Photoshop': 90,
+      'Wordpress': 80,
       'Drupal': 45
     }
   };
