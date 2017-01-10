@@ -5,7 +5,6 @@
 (function() {
   'use strict';
 
-  var age = getAge('07/31/1988');
   var hero = {
     settings: {
       hasShadow: true,
@@ -23,7 +22,7 @@
       infoList: 'info-list'
     },
     info: {
-      age: age,
+      age: getAge('07/31/1988'),
       currentJob: 'Front-end developer',
       address: '320 Wricklemarsh Road, SE3 8ES',
       email: 'hello@matt-coleman.co.uk',
@@ -48,7 +47,7 @@
       age--;
     }
     return age;
-  };
+  }
 
   hero.init = function() {
     hero.populatehero();
